@@ -9,16 +9,17 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #111;
+      background-color: #0a0a0a;
       color: #f5f5f5;
     }
 
+    /* Header */
     header {
       background: linear-gradient(90deg, #000, #ffcc00);
       padding: 20px;
       text-align: center;
       color: #000;
-      box-shadow: 0 4px 15px rgba(255,204,0,0.5);
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
     }
 
     header h1 {
@@ -35,10 +36,64 @@
       100% { text-shadow: 0 0 20px #ffd633, 0 0 35px #ffcc00, 0 0 50px #ffd633; }
     }
 
+    /* Hero Section */
+    .hero {
+      background: url('https://wallpapercave.com/wp/wp6537491.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-shadow: 0 0 15px #000;
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      background: #ffcc00;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ffcc00;
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 25px #ffcc00;
+      transform: scale(1.05);
+    }
+
+    /* Navbar */
     nav {
-      background-color: #222;
+      background-color: #111;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 10px;
     }
 
@@ -62,14 +117,8 @@
       transition: 0.4s;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00;
-    }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #fff; text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00; }
 
     section {
       padding: 40px 20px;
@@ -101,7 +150,6 @@
       border-radius: 10px;
       padding: 15px;
       text-align: center;
-      position: relative;
       overflow: hidden;
       box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -120,15 +168,8 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 30px #ffcc00, 0 0 50px #ffd633, 0 0 70px #ffcc00;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #ffd633;
-    }
+    .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 30px #ffcc00, 0 0 50px #ffd633; }
+    .card:hover img { transform: scale(1.05); box-shadow: 0 0 20px #ffd633; }
 
     .tabela {
       width: 100%;
@@ -149,26 +190,53 @@
       text-shadow: 0 0 5px #ffd633;
     }
 
-    .tabela tr:hover {
-      background-color: rgba(255,204,0,0.2);
-    }
+    .tabela tr:hover { background-color: rgba(255, 204, 0, 0.2); }
 
+    /* Footer */
     footer {
       background: #000;
       color: #ffcc00;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       margin-top: 40px;
-      box-shadow: 0 -4px 15px rgba(255,204,0,0.5);
+      box-shadow: 0 -4px 15px rgba(255, 204, 0, 0.5);
       text-shadow: 0 0 5px #ffd633;
     }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      color: #ffcc00;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+      transform: scale(1.2);
+      text-shadow: 0 0 15px #ffcc00;
+    }
+
   </style>
 </head>
 <body>
+
   <header>
     <h1>Borussia Dortmund Frauen</h1>
     <p>Orgulho Amarelo e Preto ⚫🟡</p>
   </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Juntas Somos Mais Fortes</h2>
+      <button onclick="location.href='#jogos'">Ver Próximo Jogo</button>
+    </div>
+  </section>
 
   <nav>
     <a href="#elenco">Elenco</a>
@@ -176,10 +244,10 @@
     <a href="#titulos">Títulos</a>
     <a href="#jogos">Próximos Jogos</a>
     <a href="#marcantes">Jogadoras Marcantes</a>
-    <a href="#promissoras">Jogadoras Promissoras</a>
     <a href="#historicos">Jogos Históricos</a>
   </nav>
 
+  <!-- Conteúdo (igual ao que já tinha) -->
   <section id="elenco">
     <h2>Elenco 2025/26</h2>
     <table class="tabela">
@@ -272,34 +340,21 @@
     </div>
   </section>
 
-  <section id="promissoras">
-    <h2>Jogadoras Promissoras</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhfiCx3vLKjgU3ihOIH_YUNTbMlQIcvrclg&s" alt="Rita Schumacher">
-        <h3>Rita Schumacher</h3>
-        <p>#10 • Atacante criativa e promissora</p>
-      </div>
-      <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" alt="Ronja Leubner">
-        <h3>Ronja Leubner</h3>
-        <p>Meio-campista habilidosa e jovem talento</p>
-      </div>
-      <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_KyZIGgRPyPL-R1CrMfto3Cwfaj-EcdkBQ&s" alt="Dana Marquardt">
-        <h3>Dana Marquardt</h3>
-        <p>Atacante veloz com grande potencial</p>
-      </div>
-    </div>
-  </section>
-
   <section id="historicos">
     <h2>Jogos Históricos</h2>
-    <p><strong>Borussia Dortmund x Schalke 04</strong> — Um rivais lendário: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
+    <p><strong>Borussia Dortmund x Schalke 04</strong> — Um rival lendário: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
   </section>
 
   <footer>
     <p>© 2025 Borussia Dortmund Frauen | Site criado para fins ilustrativos</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/BVB" target="_blank">🌐</a>
+      <a href="https://twitter.com/BVB" target="_blank">🐦</a>
+      <a href="https://www.instagram.com/bvb09/" target="_blank">📸</a>
+      <a href="https://www.youtube.com/user/bvb" target="_blank">▶️</a>
+    </div>
   </footer>
+
 </body>
 </html>
+
