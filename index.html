@@ -5,162 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borussia Dortmund Frauen</title>
   <style>
-    /* ====== ESTILO DO SITE ====== */
+    /* ====== ESTILOS GERAIS ====== */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000;
-      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #111;
+      color: #f1f1f1;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, #000, #ffcc00);
-      color: #000;
+      background: linear-gradient(90deg, #000, #111, #222);
+      color: #FFD700;
       padding: 20px;
       text-align: center;
+      border-bottom: 4px solid #FFD700;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
-      color: #000;
-      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      color: #fff;
     }
 
     nav {
-      background: #111;
       display: flex;
       justify-content: center;
+      background: #FFD700;
       padding: 10px;
     }
 
     nav a {
-      color: #ffcc00;
+      color: #000;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
-      color: #fff;
+      color: #111;
     }
 
     section {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    h2 {
-      color: #ffcc00;
-      border-bottom: 2px solid #ffcc00;
-      padding-bottom: 5px;
+    section h2 {
+      text-align: center;
+      color: #FFD700;
       margin-bottom: 20px;
+      font-size: 2rem;
     }
 
-    .noticia img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .destaque-jogadoras {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
-    .jogadora {
-      background: #111;
-      padding: 15px;
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
       border-radius: 10px;
       text-align: center;
-      border: 1px solid #ffcc00;
+      border: 2px solid #FFD700;
     }
 
-    .jogadora img {
-      width: 100%;
+    .card img {
+      max-width: 100%;
       border-radius: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
-    table th, table td {
+    table, th, td {
+      border: 1px solid #FFD700;
+    }
+
+    th, td {
       padding: 10px;
-      border: 1px solid #444;
       text-align: center;
     }
 
-    table th {
-      background: #ffcc00;
+    th {
+      background: #FFD700;
       color: #000;
     }
 
-    .trofeus, .jogos-marcantes {
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #ffcc00;
-      margin-top: 20px;
-    }
-
     footer {
-      background: #111;
-      color: #ffcc00;
+      background: #FFD700;
+      color: #000;
       text-align: center;
       padding: 20px;
-      margin-top: 30px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Borussia Dortmund Frauen</h1>
+    <p>Site Oficial do Time Feminino</p>
   </header>
 
   <nav>
-    <a href="#noticias">Notícias</a>
-    <a href="#destaques">Destaques</a>
     <a href="#elenco">Elenco</a>
-    <a href="#trofeus">Troféus</a>
-    <a href="#jogos">Jogos Marcantes</a>
+    <a href="#staff">Staff</a>
+    <a href="#titulos">Títulos</a>
+    <a href="#jogos">Próximos Jogos</a>
+    <a href="#marcantes">Jogos Marcantes</a>
+    <a href="#noticias">Notícias</a>
   </nav>
 
-  <section id="noticias" class="noticia">
-    <h2>Última Notícia</h2>
-    <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-Pokal-1:News-Teaser?ts=1755697416325&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Vitória da equipe">
-    <p>O Borussia Dortmund Frauen segue brilhando nos gramados, conquistando vitórias importantes e consolidando sua história no futebol feminino alemão.</p>
-  </section>
-
-  <section id="destaques">
-    <h2>Jogadoras em Destaque</h2>
-    <div class="destaque-jogadoras">
-      <div class="jogadora">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schroer.jpg" alt="Sandra Schröer">
-        <h3>Sandra Schröer</h3>
-        <p>#1 • Goleira segura e líder dentro de campo.</p>
-      </div>
-      <div class="jogadora">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl">
-        <h3>Vanessa Kuhl</h3>
-        <p>Uma das maiores jogadoras do time, referência técnica e inspiração para o grupo.</p>
-      </div>
-      <div class="jogadora">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe">
-        <h3>Marie Grothe</h3>
-        <p>Atacante mortal, decisiva nos momentos mais importantes.</p>
-      </div>
-      <div class="jogadora">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt">
-        <h3>Mandy Reinhardt</h3>
-        <p>Jogadora versátil e confiável em todas as partidas.</p>
+  <section id="noticias">
+    <h2>Notícias Recentes</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-Pokal-1:News-Teaser?ts=1755697416325&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Notícia BVB Frauen">
+        <p>Borussia Dortmund Frauen segue brilhando nas competições e mantém a hegemonia local no futebol feminino.</p>
       </div>
     </div>
   </section>
@@ -168,7 +140,9 @@
   <section id="elenco">
     <h2>Elenco 2025/26</h2>
     <table>
-      <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
+      <tr>
+        <th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th>
+      </tr>
       <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
       <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
       <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
@@ -197,24 +171,46 @@
     </table>
   </section>
 
-  <section id="trofeus" class="trofeus">
-    <h2>Troféus Conquistados</h2>
+  <section id="staff">
+    <h2>Staff Técnico</h2>
+    <div class="grid">
+      <div class="card"><h3>Marcos Högner</h3><p>Treinador Principal</p></div>
+      <div class="card"><h3>Tim Treude</h3><p>Treinador Assistente</p></div>
+      <div class="card"><h3>Dustin Wurst</h3><p>Treinador Assistente</p></div>
+      <div class="card"><h3>Josefina Plehn</h3><p>Treinadora de Goleiras</p></div>
+      <div class="card"><h3>Luísa Schulz</h3><p>Fisioterapeuta</p></div>
+      <div class="card"><h3>Benedito Terschluse</h3><p>Cientista Esportivo</p></div>
+      <div class="card"><h3>Marcel Merkel</h3><p>Gestão de Equipe</p></div>
+      <div class="card"><h3>Luísa Bergmann</h3><p>Gerente de Equipe</p></div>
+    </div>
+  </section>
+
+  <section id="titulos">
+    <h2>Títulos Conquistados</h2>
     <ul>
-      <li>Kreisliga A - Campeãs 2021/22</li>
-      <li>Bezirksliga 4 - Campeãs 2022/23</li>
-      <li>Landesliga Staffel 2 - Campeãs 2023/24</li>
-      <li>Verbandsliga Westfalen/Westfalenliga - Campeãs 2024/25</li>
-      <li>Kreispokal - 4 vezes seguidas (2021/22 até 2024/25)</li>
+      <li>Kreisliga A Campeãs - 2021/22</li>
+      <li>Bezirksliga 4 Campeãs - 2022/23</li>
+      <li>Landesliga Staffel 2 Campeãs - 2023/24</li>
+      <li>Verbandsliga Westfalen/Westfalenliga Campeãs - 2024/25</li>
+      <li>Kreispokal - 4 vezes seguidas (2021/22 a 2024/25)</li>
     </ul>
   </section>
 
-  <section id="jogos" class="jogos-marcantes">
+  <section id="jogos">
+    <h2>Próximos Jogos</h2>
+    <ul>
+      <li>31/08 - Borussia Dortmund Frauen x Köln II</li>
+      <li>07/09 - Borussia Dortmund Frauen x Borussia Mönchengladbach II</li>
+    </ul>
+  </section>
+
+  <section id="marcantes">
     <h2>Jogos Marcantes</h2>
-    <p><strong>Borussia Dortmund x Schalke 04</strong> - Final da Kreispokal: Vitória por 2x0 no clássico do <em>Revierderby</em>, um marco na história do clube feminino.</p>
+    <p><b>Borussia Dortmund x Schalke 04</b> – Final da Kreispokal, um verdadeiro Revierderby, onde as Borussinnen venceram por <b>2x0</b>, marcando história.</p>
   </section>
 
   <footer>
-    <p>© 2025 Borussia Dortmund Frauen - Todos os direitos reservados</p>
+    <p>&copy; 2025 Borussia Dortmund Frauen - Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
