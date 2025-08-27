@@ -1,326 +1,356 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Borussia Dortmund Frauen</title>
+  <meta name="description" content="Fan site - Borussia Dortmund Frauen. Elenco, staff, jogos, histórias e jogadoras promissoras." />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Reset básico */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html { scroll-behavior: smooth; }
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#080808;
+      color:#f4f4f4;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    /* HEADER */
+    /* Top header */
     header {
-      background: linear-gradient(90deg, #000, #ffcc00);
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
+      background: linear-gradient(90deg,#000 0%, #121212 40%, #ffcc00 100%);
+      padding:18px 12px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      font-weight: bold;
-      color: #ffcc00;
-      text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00;
-      animation: neonHeader 2s ease-in-out infinite alternate;
+    header h1{
+      color:#ffcc00;
+      font-size:1.95rem;
+      letter-spacing:0.6px;
+      text-shadow:0 0 8px rgba(255,204,0,0.15);
     }
-    @keyframes neonHeader {
-      0% { text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00; }
-      100% { text-shadow: 0 0 20px #ffd633, 0 0 35px #ffcc00, 0 0 50px #ffd633; }
-    }
+    header p{ color:#e6d17a; opacity:0.95; margin-top:6px; font-size:0.95rem; }
 
-    /* HERO SECTION */
-    .hero {
+    /* NAV (com mobile toggle) */
+    .nav-wrap{ background:#121212; position:sticky; top:0; z-index:40; box-shadow:0 2px 10px rgba(0,0,0,0.6); }
+    nav.container { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:8px 16px; gap:12px; }
+    .nav-links { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    .nav-links a { color:#ffd64d; text-decoration:none; font-weight:700; padding:8px 6px; border-radius:6px; transition:all .18s ease; }
+    .nav-links a:hover{ color:#fff; background:linear-gradient(90deg, rgba(255,204,0,0.08), rgba(255,204,0,0.03)); transform:translateY(-2px); box-shadow:0 8px 20px rgba(255,204,0,0.03); }
+
+    .burger { display:none; background:transparent; border:0; color:#ffd64d; font-size:1.4rem; cursor:pointer; }
+
+    /* HERO */
+    .hero{
+      height:64vh;
+      min-height:360px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      position:relative;
       background: url("https://wallpapercave.com/wp/wp9517031.jpg") center/cover no-repeat;
-      height: 65vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+    .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65)); }
+    .hero-inner{ position:relative; z-index:2; max-width:1000px; padding:12px; }
+    .hero h2{ color:#ffcc00; font-size:2.8rem; margin-bottom:12px; text-shadow:0 6px 24px rgba(0,0,0,0.7); }
+    .hero p{ color:#fff; opacity:0.95; margin-bottom:18px; font-size:1.05rem; }
+    .cta { display:inline-block; background:#ffcc00; color:#000; font-weight:800; padding:12px 24px; border-radius:999px; text-decoration:none; box-shadow:0 10px 30px rgba(255,204,0,0.18); transition:transform .18s ease, box-shadow .18s ease; }
+    .cta:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(255,204,0,0.28); color:#000; text-decoration:none; }
+
+    /* Main container style for sections */
+    .container { max-width:1200px; margin:0 auto; padding:36px 18px; }
+
+    h2.section-title { color:#ffcc00; margin-bottom:16px; font-size:1.45rem; text-shadow:0 0 6px rgba(255,204,0,0.08); }
+
+    /* tables */
+    .tabela { width:100%; border-collapse:collapse; margin-top:12px; border-radius:8px; overflow:hidden; }
+    .tabela th, .tabela td { padding:10px 8px; border-bottom:1px solid rgba(255,255,255,0.04); text-align:center; font-size:0.95rem; }
+    .tabela th { background:#ffcc00; color:#000; font-weight:800; }
+    .tabela tr:hover td { background:rgba(255,204,0,0.04); }
+
+    /* Grid cards */
+    .grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .card { background:#0f0f0f; padding:12px; border-radius:12px; box-shadow:0 6px 22px rgba(0,0,0,0.6); border:1px solid rgba(255,204,0,0.06); transition:transform .22s ease, box-shadow .22s ease; text-align:center; }
+    .card:hover{ transform:translateY(-8px); box-shadow:0 18px 42px rgba(0,0,0,0.7), 0 0 30px rgba(255,204,0,0.06); }
+    .card img{ width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
+
+    /* Promissoras badge */
+    .badge { display:inline-block; background: rgba(255,204,0,0.12); color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; margin-bottom:8px; color:#ffed99; }
+
+    /* Footer */
+    footer{ background:linear-gradient(180deg,#040404,#000); color:#ffd64d; padding:28px 18px; margin-top:36px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .socials { display:flex; gap:12px; align-items:center; }
+    .socials a{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:8px; background:transparent; color:#ffd64d; text-decoration:none; font-size:18px; transition:transform .16s ease, background .16s ease, color .16s ease; border:1px solid rgba(255,204,0,0.08); }
+    .socials a:hover{ transform:translateY(-6px) scale(1.05); color:#fff; background:linear-gradient(90deg, rgba(255,204,0,0.12), rgba(255,204,0,0.06)); box-shadow:0 10px 30px rgba(255,204,0,0.06); }
+
+    /* Back to top button */
+    .top-btn {
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      min-width:48px;
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffcc00,#f0b800);
+      color:#000;
+      box-shadow:0 12px 30px rgba(255,204,0,0.18);
+      cursor:pointer;
+      border:0;
+      z-index:60;
+      transform:translateY(0);
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .22s ease, visibility .22s ease, transform .22s ease;
     }
-    .hero h2, .hero p, .hero a {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h2 {
-      font-size: 3rem;
-      color: #ffcc00;
-      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
-    }
-    .hero p {
-      margin: 15px 0;
-      font-size: 1.3rem;
-    }
-    .hero a {
-      display: inline-block;
-      background: #ffcc00;
-      color: #000;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 0 15px #ffcc00;
-    }
-    .hero a:hover {
-      background: #000;
-      color: #ffcc00;
-      box-shadow: 0 0 25px #ffd633, 0 0 40px #ffcc00;
+    .top-btn.show { opacity:1; visibility:visible; transform:translateY(0); }
+
+    /* Responsive adjustments */
+    @media (max-width:900px){
+      header h1{ font-size:1.5rem; }
+      .hero h2{ font-size:1.9rem; }
+      .hero{ height:48vh; min-height:300px; }
+      .burger{ display:block; }
+      .nav-links{ display:none; width:100%; }
+      .nav-links.open{ display:flex; flex-direction:column; gap:8px; padding:12px 16px; background:#0f0f0f; border-top:1px solid rgba(255,204,0,0.03); }
+      .container{ padding:24px 14px; }
     }
 
-    /* NAV */
-    nav {
-      background-color: #222;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 10px;
-    }
-    nav a {
-      color: #ffcc00;
-      margin: 5px 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -3px;
-      left: 0;
-      background-color: #ffcc00;
-      transition: 0.4s;
-    }
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: #fff; text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00; }
-
-    /* SECTIONS */
-    section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      color: #ffcc00;
-      margin-bottom: 20px;
-      display: inline-block;
-      text-shadow: 0 0 5px #ffd633;
-      animation: neonTitle 2s ease-in-out infinite alternate;
-    }
-    @keyframes neonTitle {
-      0% { text-shadow: 0 0 5px #ffd633, 0 0 10px #ffcc00; }
-      100% { text-shadow: 0 0 15px #ffd633, 0 0 30px #ffcc00, 0 0 50px #ffd633; }
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #1c1c1c;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      overflow: hidden;
-      box-shadow: 0 0 10px #ffcc00;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 25px #ffcc00, 0 0 45px #ffd633;
-    }
-    .card img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    /* TABLE */
-    .tabela {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    .tabela th, .tabela td {
-      border: 1px solid #555;
-      padding: 8px;
-      text-align: center;
-    }
-    .tabela th {
-      background-color: #ffcc00;
-      color: #000;
-      text-shadow: 0 0 5px #ffd633;
-    }
-    .tabela tr:hover { background-color: rgba(255,204,0,0.2); }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: #ffcc00;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      box-shadow: 0 -4px 15px rgba(255,204,0,0.5);
-      text-shadow: 0 0 5px #ffd633;
-    }
+    /* subtle focus states for accessibility */
+    a:focus, button:focus { outline:2px solid rgba(255,204,0,0.18); outline-offset:3px; }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Borussia Dortmund Frauen</h1>
     <p>Orgulho Amarelo e Preto ⚫🟡</p>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Bem-vindo ao Universo Frauen</h2>
-    <p>O orgulho feminino do Borussia Dortmund</p>
-    <a href="#jogos">Ver Próximo Jogo</a>
-  </section>
-
   <!-- NAV -->
-  <nav>
-    <a href="#elenco">Elenco</a>
-    <a href="#staff">Staff</a>
-    <a href="#titulos">Títulos</a>
-    <a href="#jogos">Próximos Jogos</a>
-    <a href="#marcantes">Jogadoras Marcantes</a>
-    <a href="#historicos">Jogos Históricos</a>
-  </nav>
-
-  <!-- ELENCO -->
-  <section id="elenco">
-    <h2>Elenco 2025/26</h2>
-    <table class="tabela">
-      <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
-      <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
-      <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
-      <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
-      <tr><td>5</td><td>Jabbes</td><td>Jasmim</td><td>Ataque</td></tr>
-      <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
-      <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
-      <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
-      <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
-      <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
-      <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
-      <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
-      <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
-      <tr><td>16</td><td>Wisniewski</td><td>Lúcia</td><td>Ataque</td></tr>
-      <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
-      <tr><td>18</td><td>Árvore</td><td>Celina</td><td>Defesa</td></tr>
-      <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
-      <tr><td>20</td><td>Vogel</td><td>Ana-Sophie</td><td>Defesa</td></tr>
-      <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
-      <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
-      <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
-      <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
-      <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
-      <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
-      <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
-      <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
-    </table>
-  </section>
-
-  <!-- STAFF -->
-  <section id="staff">
-    <h2>Staff Técnico</h2>
-    <ul>
-      <li>Markus Högner — Treinador Principal</li>
-      <li>Tim Treude — Treinador Assistente</li>
-      <li>Dustin Wurst — Treinador Assistente</li>
-      <li>Josefina Plehn — Treinadora de Goleiras</li>
-      <li>Luísa Schulz — Fisioterapeuta</li>
-      <li>Benedito Terschluse — Cientista Esportivo</li>
-      <li>Marcel Merkel — Líder de Gestão de Equipe</li>
-      <li>Luísa Bergmann — Gerente de Equipe</li>
-    </ul>
-  </section>
-
-  <!-- TITULOS -->
-  <section id="titulos">
-    <h2>Títulos Conquistados</h2>
-    <ul>
-      <li>Kreisliga A Campeãs — 2021/22</li>
-      <li>Bezirksliga 4 Campeãs — 2022/23</li>
-      <li>Landesliga Staffel 2 Campeãs — 2023/24</li>
-      <li>Verbandsliga Westfalen / Westfalenliga Campeãs — 2024/25</li>
-      <li>Kreispokal — 4 vezes seguidas (2021/22 a 2024/25)</li>
-    </ul>
-  </section>
-
-  <!-- JOGOS -->
-  <section id="jogos">
-    <h2>Próximos Jogos</h2>
-    <table class="tabela">
-      <tr><th>Data</th><th>Adversário</th></tr>
-      <tr><td>31/08</td><td>1. FC Köln II</td></tr>
-      <tr><td>07/09</td><td>Borussia Mönchengladbach II</td></tr>
-    </table>
-  </section>
-
-  <!-- JOGADORAS MARCANTES -->
-  <section id="marcantes">
-    <h2>Jogadoras Marcantes da História</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schroer.jpg" alt="Sandra Schröer">
-        <h3>Sandra Schröer</h3>
-        <p>#1 • Goleira</p>
+  <div class="nav-wrap" aria-hidden="false">
+    <nav class="container" role="navigation" aria-label="Menu principal">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="burger" id="burger" aria-label="Abrir menu">☰</button>
+        <div style="font-weight:700;color:#ffd64d;">BVB Frauen</div>
       </div>
-      <div class="card">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl">
-        <h3>Vanessa Kuhl</h3>
-        <p>Atacante decisiva e símbolo da equipe</p>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#elenco">Elenco</a>
+        <a href="#staff">Staff</a>
+        <a href="#titulos">Títulos</a>
+        <a href="#jogos">Próximos Jogos</a>
+        <a href="#marcantes">Jogadoras Marcantes</a>
+        <a href="#promissoras">Promissoras</a>
+        <a href="#historicos">Históricos</a>
       </div>
-      <div class="card">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe">
-        <h3>Marie Grothe</h3>
-        <p>Atacante mortal que marcou época no time</p>
-      </div>
-      <div class="card">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt">
-        <h3>Mandy Reinhardt</h3>
-        <p>Referência em grandes momentos históricos</p>
-      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" role="banner" aria-label="Hero - BVB Frauen">
+    <div class="hero-inner">
+      <h2>Juntas Somos Mais Fortes</h2>
+      <p>O orgulho feminino do Borussia Dortmund — acompanhe elenco, jogos e talentos em ascensão.</p>
+      <a class="cta" href="#jogos" role="button">Ver Próximo Jogo</a>
     </div>
   </section>
 
-  <!-- HISTORICOS -->
-  <section id="historicos">
-    <h2>Jogos Históricos</h2>
-    <p><strong>Borussia Dortmund x Schalke 04</strong> — Um rival lendário: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
-  </section>
+  <!-- ELENCO -->
+  <main>
+    <section id="elenco" class="container" aria-labelledby="elencoTitle">
+      <h2 class="section-title" id="elencoTitle">Elenco 2025/26</h2>
+      <div style="overflow:auto;">
+        <table class="tabela" aria-describedby="elencoTitle">
+          <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
+          <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
+          <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
+          <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
+          <tr><td>5</td><td>Jabbes</td><td>Jasmim</td><td>Ataque</td></tr>
+          <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
+          <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
+          <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
+          <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
+          <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
+          <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
+          <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
+          <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
+          <tr><td>16</td><td>Wisniewski</td><td>Lúcia</td><td>Ataque</td></tr>
+          <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
+          <tr><td>18</td><td>Árvore</td><td>Celina</td><td>Defesa</td></tr>
+          <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
+          <tr><td>20</td><td>Vogel</td><td>Ana-Sophie</td><td>Defesa</td></tr>
+          <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
+          <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
+          <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
+          <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
+          <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
+          <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
+          <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
+          <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
+        </table>
+      </div>
+    </section>
 
+    <!-- STAFF -->
+    <section id="staff" class="container" aria-labelledby="staffTitle">
+      <h2 class="section-title" id="staffTitle">Staff Técnico</h2>
+      <ul>
+        <li>Markus Högner — Treinador Principal</li>
+        <li>Tim Treude — Treinador Assistente</li>
+        <li>Dustin Wurst — Treinador Assistente</li>
+        <li>Josefina Plehn — Treinadora de Goleiras</li>
+        <li>Luísa Schulz — Fisioterapeuta</li>
+        <li>Benedito Terschluse — Cientista Esportivo</li>
+        <li>Marcel Merkel — Líder de Gestão de Equipe</li>
+        <li>Luísa Bergmann — Gerente de Equipe</li>
+      </ul>
+    </section>
+
+    <!-- TITULOS -->
+    <section id="titulos" class="container" aria-labelledby="titulosTitle">
+      <h2 class="section-title" id="titulosTitle">Títulos Conquistados</h2>
+      <ul>
+        <li>Kreisliga A Campeãs — 2021/22</li>
+        <li>Bezirksliga 4 Campeãs — 2022/23</li>
+        <li>Landesliga Staffel 2 Campeãs — 2023/24</li>
+        <li>Verbandsliga Westfalen / Westfalenliga Campeãs — 2024/25</li>
+        <li>Kreispokal — 4 vezes seguidas (2021/22 a 2024/25)</li>
+      </ul>
+    </section>
+
+    <!-- JOGOS -->
+    <section id="jogos" class="container" aria-labelledby="jogosTitle">
+      <h2 class="section-title" id="jogosTitle">Próximos Jogos</h2>
+      <table class="tabela" role="table" aria-label="Próximos jogos">
+        <tr><th>Data</th><th>Adversário</th></tr>
+        <tr><td>31/08</td><td>1. FC Köln II</td></tr>
+        <tr><td>07/09</td><td>Borussia Mönchengladbach II</td></tr>
+      </table>
+    </section>
+
+    <!-- JOGADORAS MARCANTES -->
+    <section id="marcantes" class="container" aria-labelledby="marcantesTitle">
+      <h2 class="section-title" id="marcantesTitle">Jogadoras Marcantes da História</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schroer.jpg" alt="Sandra Schröer — BVB Frauen">
+          <strong>Sandra Schröer</strong>
+          <p>#1 • Goleira</p>
+        </article>
+        <article class="card" role="listitem">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl — BVB Frauen">
+          <strong>Vanessa Kuhl</strong>
+          <p>Atacante decisiva e símbolo da equipe</p>
+        </article>
+        <article class="card" role="listitem">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe — BVB Frauen">
+          <strong>Marie Grothe</strong>
+          <p>Atacante que marcou época</p>
+        </article>
+        <article class="card" role="listitem">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt — BVB Frauen">
+          <strong>Mandy Reinhardt</strong>
+          <p>Referência em grandes momentos históricos</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROMISSORAS (nova aba solicitada) -->
+    <section id="promissoras" class="container" aria-labelledby="promissorasTitle">
+      <h2 class="section-title" id="promissorasTitle">Jogadoras Promissoras</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <span class="badge">Camisa 10</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhfiCx3vLKjgU3ihOIH_YUNTbMlQIcvrclg&s" alt="Rita Schumacher">
+          <strong>Rita Schumacher</strong>
+          <p>#10 • Atacante criativa e promissora</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <span class="badge">Meio-campista</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" alt="Ronja Leubner">
+          <strong>Ronja Leubner</strong>
+          <p>Meio-campista habilidosa e jovem talento</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <span class="badge">Atacante</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_KyZIGgRPyPL-R1CrMfto3Cwfaj-EcdkBQ&s" alt="Dana Marquardt">
+          <strong>Dana Marquardt</strong>
+          <p>Atacante veloz com grande potencial</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HISTÓRICOS -->
+    <section id="historicos" class="container" aria-labelledby="historicosTitle">
+      <h2 class="section-title" id="historicosTitle">Jogos Históricos</h2>
+      <p><strong>Borussia Dortmund x Schalke 04</strong> — Uma rivalidade lendária: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Borussia Dortmund Frauen | Site criado para fins ilustrativos</p>
+    <div class="footer-inner">
+      <div>
+        <strong>© 2025 Borussia Dortmund Frauen</strong>
+        <div style="opacity:0.85; margin-top:6px; font-size:0.95rem">Site criado para fins ilustrativos • Conteúdo para fãs</div>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-weight:700; margin-bottom:8px">Siga o BVB</div>
+        <div class="socials" role="navigation" aria-label="Redes sociais">
+          <a href="https://www.bvb.de/" target="_blank" rel="noopener noreferrer" title="Site Oficial">🌐</a>
+          <a href="https://twitter.com/BVB" target="_blank" rel="noopener noreferrer" title="Twitter">🐦</a>
+          <a href="https://www.instagram.com/bvb09/" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
+          <a href="https://www.youtube.com/user/bvb" target="_blank" rel="noopener noreferrer" title="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="toTop" class="top-btn" aria-label="Voltar ao topo" title="Voltar ao topo">⬆</button>
+
+  <!-- SCRIPTS: mobile menu toggle + back-to-top -->
+  <script>
+    // mobile menu
+    (function(){
+      const burger = document.getElementById('burger');
+      const navLinks = document.getElementById('navLinks');
+      if(burger){
+        burger.addEventListener('click', ()=> {
+          navLinks.classList.toggle('open');
+          burger.innerText = navLinks.classList.contains('open') ? '✕' : '☰';
+        });
+      }
+    })();
+
+    // back-to-top button logic
+    (function(){
+      const toTop = document.getElementById('toTop');
+      const threshold = 300; //px
+      function checkScroll(){
+        if(window.scrollY > threshold){
+          toTop.classList.add('show');
+        } else {
+          toTop.classList.remove('show');
+        }
+      }
+      window.addEventListener('scroll', checkScroll);
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      // init
+      checkScroll();
+    })();
+  </script>
 </body>
 </html>
