@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borussia Dortmund Frauen</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #0a0a0a;
-      color: #f5f5f5;
+      box-sizing: border-box;
     }
 
-    /* Header */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
     header {
       background: linear-gradient(90deg, #000, #ffcc00);
       padding: 20px;
       text-align: center;
-      color: #000;
       box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
     }
-
     header h1 {
       margin: 0;
       font-size: 2.8rem;
@@ -30,16 +34,15 @@
       text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00;
       animation: neonHeader 2s ease-in-out infinite alternate;
     }
-
     @keyframes neonHeader {
       0% { text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00; }
       100% { text-shadow: 0 0 20px #ffd633, 0 0 35px #ffcc00, 0 0 50px #ffd633; }
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
-      background: url('https://wallpapercave.com/wp/wp6537491.jpg') no-repeat center center/cover;
-      height: 70vh;
+      background: url("https://wallpapercave.com/wp/wp9517031.jpg") center/cover no-repeat;
+      height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -47,65 +50,61 @@
       text-align: center;
       color: #fff;
       position: relative;
+      overflow: hidden;
     }
-
     .hero::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
     }
-
-    .hero-content {
+    .hero h2, .hero p, .hero a {
       position: relative;
       z-index: 2;
     }
-
     .hero h2 {
       font-size: 3rem;
-      margin-bottom: 20px;
       color: #ffcc00;
-      text-shadow: 0 0 15px #000;
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
     }
-
-    .hero button {
-      padding: 12px 24px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
+    .hero p {
+      margin: 15px 0;
+      font-size: 1.3rem;
+    }
+    .hero a {
+      display: inline-block;
       background: #ffcc00;
       color: #000;
-      cursor: pointer;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
       box-shadow: 0 0 15px #ffcc00;
-      transition: all 0.3s ease;
+    }
+    .hero a:hover {
+      background: #000;
+      color: #ffcc00;
+      box-shadow: 0 0 25px #ffd633, 0 0 40px #ffcc00;
     }
 
-    .hero button:hover {
-      background: #fff;
-      color: #000;
-      box-shadow: 0 0 25px #ffcc00;
-      transform: scale(1.05);
-    }
-
-    /* Navbar */
+    /* NAV */
     nav {
-      background-color: #111;
+      background-color: #222;
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       padding: 10px;
     }
-
     nav a {
       color: #ffcc00;
-      margin: 0 15px;
+      margin: 5px 15px;
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
       position: relative;
     }
-
     nav a::after {
       content: '';
       position: absolute;
@@ -116,16 +115,15 @@
       background-color: #ffcc00;
       transition: 0.4s;
     }
-
     nav a:hover::after { width: 100%; }
     nav a:hover { color: #fff; text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00; }
 
+    /* SECTIONS */
     section {
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
     }
-
     h2 {
       color: #ffcc00;
       margin-bottom: 20px;
@@ -133,94 +131,64 @@
       text-shadow: 0 0 5px #ffd633;
       animation: neonTitle 2s ease-in-out infinite alternate;
     }
-
     @keyframes neonTitle {
       0% { text-shadow: 0 0 5px #ffd633, 0 0 10px #ffcc00; }
       100% { text-shadow: 0 0 15px #ffd633, 0 0 30px #ffcc00, 0 0 50px #ffd633; }
     }
 
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
-
     .card {
       background: #1c1c1c;
       border-radius: 10px;
       padding: 15px;
       text-align: center;
       overflow: hidden;
-      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
+      box-shadow: 0 0 10px #ffcc00;
       transition: transform 0.3s, box-shadow 0.3s;
-      animation: floatCard 3s ease-in-out infinite alternate;
     }
-
-    @keyframes floatCard {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-5px); }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 25px #ffcc00, 0 0 45px #ffd633;
     }
-
     .card img {
       max-width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 30px #ffcc00, 0 0 50px #ffd633; }
-    .card:hover img { transform: scale(1.05); box-shadow: 0 0 20px #ffd633; }
-
+    /* TABLE */
     .tabela {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-
     .tabela th, .tabela td {
       border: 1px solid #555;
       padding: 8px;
       text-align: center;
-      transition: background 0.3s;
     }
-
     .tabela th {
       background-color: #ffcc00;
       color: #000;
       text-shadow: 0 0 5px #ffd633;
     }
+    .tabela tr:hover { background-color: rgba(255,204,0,0.2); }
 
-    .tabela tr:hover { background-color: rgba(255, 204, 0, 0.2); }
-
-    /* Footer */
+    /* FOOTER */
     footer {
       background: #000;
       color: #ffcc00;
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       margin-top: 40px;
-      box-shadow: 0 -4px 15px rgba(255, 204, 0, 0.5);
+      box-shadow: 0 -4px 15px rgba(255,204,0,0.5);
       text-shadow: 0 0 5px #ffd633;
     }
-
-    .social-icons {
-      margin-top: 15px;
-    }
-
-    .social-icons a {
-      color: #ffcc00;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      transition: transform 0.3s, color 0.3s;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: #fff;
-      transform: scale(1.2);
-      text-shadow: 0 0 15px #ffcc00;
-    }
-
   </style>
 </head>
 <body>
@@ -230,14 +198,14 @@
     <p>Orgulho Amarelo e Preto ⚫🟡</p>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>Juntas Somos Mais Fortes</h2>
-      <button onclick="location.href='#jogos'">Ver Próximo Jogo</button>
-    </div>
+    <h2>Bem-vindo ao Universo Frauen</h2>
+    <p>O orgulho feminino do Borussia Dortmund</p>
+    <a href="#jogos">Ver Próximo Jogo</a>
   </section>
 
+  <!-- NAV -->
   <nav>
     <a href="#elenco">Elenco</a>
     <a href="#staff">Staff</a>
@@ -247,7 +215,7 @@
     <a href="#historicos">Jogos Históricos</a>
   </nav>
 
-  <!-- Conteúdo (igual ao que já tinha) -->
+  <!-- ELENCO -->
   <section id="elenco">
     <h2>Elenco 2025/26</h2>
     <table class="tabela">
@@ -280,6 +248,7 @@
     </table>
   </section>
 
+  <!-- STAFF -->
   <section id="staff">
     <h2>Staff Técnico</h2>
     <ul>
@@ -294,6 +263,7 @@
     </ul>
   </section>
 
+  <!-- TITULOS -->
   <section id="titulos">
     <h2>Títulos Conquistados</h2>
     <ul>
@@ -305,6 +275,7 @@
     </ul>
   </section>
 
+  <!-- JOGOS -->
   <section id="jogos">
     <h2>Próximos Jogos</h2>
     <table class="tabela">
@@ -314,6 +285,7 @@
     </table>
   </section>
 
+  <!-- JOGADORAS MARCANTES -->
   <section id="marcantes">
     <h2>Jogadoras Marcantes da História</h2>
     <div class="grid">
@@ -340,6 +312,7 @@
     </div>
   </section>
 
+  <!-- HISTORICOS -->
   <section id="historicos">
     <h2>Jogos Históricos</h2>
     <p><strong>Borussia Dortmund x Schalke 04</strong> — Um rival lendário: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
@@ -347,14 +320,7 @@
 
   <footer>
     <p>© 2025 Borussia Dortmund Frauen | Site criado para fins ilustrativos</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/BVB" target="_blank">🌐</a>
-      <a href="https://twitter.com/BVB" target="_blank">🐦</a>
-      <a href="https://www.instagram.com/bvb09/" target="_blank">📸</a>
-      <a href="https://www.youtube.com/user/bvb" target="_blank">▶️</a>
-    </div>
   </footer>
 
 </body>
 </html>
-
