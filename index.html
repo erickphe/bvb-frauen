@@ -61,6 +61,9 @@
       color: #FFD700;
       margin-bottom: 20px;
       font-size: 2rem;
+      border-bottom: 2px solid #FFD700;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
     .grid {
@@ -103,6 +106,30 @@
       color: #000;
     }
 
+    .jogos, .trofeus, .marcantes {
+      background: #1a1a1a;
+      border-left: 5px solid #FFD700;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .elenco {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid #FFD700;
+    }
+
+    .destaques {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid #FFD700;
+    }
+
     footer {
       background: #FFD700;
       color: #000;
@@ -119,12 +146,12 @@
   </header>
 
   <nav>
-    <a href="#elenco">Elenco</a>
-    <a href="#staff">Staff</a>
-    <a href="#titulos">Títulos</a>
-    <a href="#jogos">Próximos Jogos</a>
-    <a href="#marcantes">Jogos Marcantes</a>
     <a href="#noticias">Notícias</a>
+    <a href="#destaques">Destaques</a>
+    <a href="#elenco">Elenco</a>
+    <a href="#jogos">Próximos Jogos</a>
+    <a href="#titulos">Títulos</a>
+    <a href="#marcantes">Jogos Marcantes</a>
   </nav>
 
   <section id="noticias">
@@ -137,80 +164,97 @@
     </div>
   </section>
 
-  <section id="elenco">
-    <h2>Elenco 2025/26</h2>
-    <table>
-      <tr>
-        <th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th>
-      </tr>
-      <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
-      <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
-      <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
-      <tr><td>5</td><td>Jabbes</td><td>Jasmim</td><td>Ataque</td></tr>
-      <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
-      <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
-      <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
-      <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
-      <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
-      <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
-      <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
-      <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
-      <tr><td>16</td><td>Wisniewski</td><td>Lúcia</td><td>Ataque</td></tr>
-      <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
-      <tr><td>18</td><td>Árvore</td><td>Celina</td><td>Defesa</td></tr>
-      <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
-      <tr><td>20</td><td>Vogel</td><td>Ana-Sophie</td><td>Defesa</td></tr>
-      <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
-      <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
-      <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
-      <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
-      <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
-      <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
-      <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
-      <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
-    </table>
+  <section id="destaques">
+    <h2>Jogadoras Destaques 25/26</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/marquardt.jpg" alt="Dana Marquardt">
+        <h3>Dana Marquardt</h3>
+        <p>Ataque – Uma das principais da temporada, decisiva nos momentos-chave.</p>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" alt="Ronja Leubner">
+        <h3>Ronja Leubner</h3>
+        <p>Meio-campo – Controle de bola e passes precisos que constroem o jogo.</p>
+      </div>
+      <div class="card">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schumacher.jpg" alt="Rita Schumacher">
+        <h3>Rita Schumacher</h3>
+        <p>Ataque – Goleadora da temporada, sempre presente nos momentos decisivos.</p>
+      </div>
+      <div class="card">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/willeke.jpg" alt="Nora Willeke">
+        <h3>Nora Willeke</h3>
+        <p>Meio-campo – Criativa, organiza e conecta o time.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="staff">
-    <h2>Staff Técnico</h2>
-    <div class="grid">
-      <div class="card"><h3>Marcos Högner</h3><p>Treinador Principal</p></div>
-      <div class="card"><h3>Tim Treude</h3><p>Treinador Assistente</p></div>
-      <div class="card"><h3>Dustin Wurst</h3><p>Treinador Assistente</p></div>
-      <div class="card"><h3>Josefina Plehn</h3><p>Treinadora de Goleiras</p></div>
-      <div class="card"><h3>Luísa Schulz</h3><p>Fisioterapeuta</p></div>
-      <div class="card"><h3>Benedito Terschluse</h3><p>Cientista Esportivo</p></div>
-      <div class="card"><h3>Marcel Merkel</h3><p>Gestão de Equipe</p></div>
-      <div class="card"><h3>Luísa Bergmann</h3><p>Gerente de Equipe</p></div>
+  <section id="elenco">
+    <h2>Elenco 2025/26</h2>
+    <div class="elenco">
+      <table>
+        <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
+        <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
+        <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
+        <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
+        <tr><td>5</td><td>Jabbes</td><td>Jasmim</td><td>Ataque</td></tr>
+        <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
+        <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
+        <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
+        <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
+        <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
+        <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
+        <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
+        <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
+        <tr><td>16</td><td>Wisniewski</td><td>Lúcia</td><td>Ataque</td></tr>
+        <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
+        <tr><td>18</td><td>Árvore</td><td>Celina</td><td>Defesa</td></tr>
+        <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
+        <tr><td>20</td><td>Vogel</td><td>Ana-Sophie</td><td>Defesa</td></tr>
+        <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
+        <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
+        <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
+        <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
+        <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
+        <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
+        <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
+        <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="jogos">
+    <h2>Próximos Jogos</h2>
+    <div class="jogos">
+      <p><strong>31/08</strong> – Borussia Dortmund Frauen x Köln II</p>
+      <p><strong>07/09</strong> – Borussia Dortmund Frauen x Borussia Mönchengladbach II</p>
     </div>
   </section>
 
   <section id="titulos">
     <h2>Títulos Conquistados</h2>
-    <ul>
-      <li>Kreisliga A Campeãs - 2021/22</li>
-      <li>Bezirksliga 4 Campeãs - 2022/23</li>
-      <li>Landesliga Staffel 2 Campeãs - 2023/24</li>
-      <li>Verbandsliga Westfalen/Westfalenliga Campeãs - 2024/25</li>
-      <li>Kreispokal - 4 vezes seguidas (2021/22 a 2024/25)</li>
-    </ul>
-  </section>
-
-  <section id="jogos">
-    <h2>Próximos Jogos</h2>
-    <ul>
-      <li>31/08 - Borussia Dortmund Frauen x Köln II</li>
-      <li>07/09 - Borussia Dortmund Frauen x Borussia Mönchengladbach II</li>
-    </ul>
+    <div class="trofeus">
+      <ul>
+        <li>Kreisliga A – Campeãs 2021/22</li>
+        <li>Bezirksliga 4 – Campeãs 2022/23</li>
+        <li>Landesliga Staffel 2 – Campeãs 2023/24</li>
+        <li>Verbandsliga Westfalen / Westfalenliga – Campeãs 2024/25</li>
+        <li>Kreispokal – 4 vezes seguidas (2021/22 até 2024/25)</li>
+      </ul>
+    </div>
   </section>
 
   <section id="marcantes">
     <h2>Jogos Marcantes</h2>
-    <p><b>Borussia Dortmund x Schalke 04</b> – Final da Kreispokal, um verdadeiro Revierderby, onde as Borussinnen venceram por <b>2x0</b>, marcando história.</p>
+    <div class="marcantes">
+      <h3>Borussia Dortmund x Schalke 04</h3>
+      <p>Revierderby decisivo na final da Kreispokal: vitória por 2x0, consagrando o time feminino como referência no futebol local.</p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Borussia Dortmund Frauen - Todos os direitos reservados.</p>
+    <p>&copy; 2025 Borussia Dortmund Frauen – Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
