@@ -18,18 +18,21 @@
       padding: 20px;
       text-align: center;
       color: #000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      box-shadow: 0 4px 15px rgba(255,204,0,0.5);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: bold;
-      transition: 0.3s;
+      color: #ffcc00;
+      text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00;
+      animation: neonHeader 2s ease-in-out infinite alternate;
     }
 
-    header h1:hover {
-      text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffd633;
+    @keyframes neonHeader {
+      0% { text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00; }
+      100% { text-shadow: 0 0 20px #ffd633, 0 0 35px #ffcc00, 0 0 50px #ffd633; }
     }
 
     nav {
@@ -44,13 +47,28 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #ffcc00;
+      transition: 0.4s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a:hover {
-      color: white;
-      transform: scale(1.1);
-      text-shadow: 0 0 10px #ffcc00;
+      color: #fff;
+      text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00;
     }
 
     section {
@@ -63,11 +81,13 @@
       color: #ffcc00;
       margin-bottom: 20px;
       display: inline-block;
-      transition: text-shadow 0.3s;
+      text-shadow: 0 0 5px #ffd633;
+      animation: neonTitle 2s ease-in-out infinite alternate;
     }
 
-    h2:hover {
-      text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00;
+    @keyframes neonTitle {
+      0% { text-shadow: 0 0 5px #ffd633, 0 0 10px #ffcc00; }
+      100% { text-shadow: 0 0 15px #ffd633, 0 0 30px #ffcc00, 0 0 50px #ffd633; }
     }
 
     .grid {
@@ -78,38 +98,19 @@
 
     .card {
       background: #1c1c1c;
-      border: 1px solid #333;
       border-radius: 10px;
       padding: 15px;
       text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: floatCard 3s ease-in-out infinite alternate;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,204,0,0.4), rgba(255,204,0,0.0), rgba(255,204,0,0.4));
-      transform: rotate(45deg);
-      opacity: 0;
-      transition: all 0.5s ease;
-      pointer-events: none;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-      animation: shine 2s linear infinite;
-    }
-
-    @keyframes shine {
-      0% { transform: translate(-100%, -100%) rotate(45deg); }
-      100% { transform: translate(100%, 100%) rotate(45deg); }
+    @keyframes floatCard {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-5px); }
     }
 
     .card img {
@@ -117,19 +118,16 @@
       border-radius: 8px;
       margin-bottom: 10px;
       transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      z-index: 1;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      border-color: #ffcc00;
-      box-shadow: 0 8px 20px rgba(255,204,0,0.6);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px #ffcc00, 0 0 50px #ffd633, 0 0 70px #ffcc00;
     }
 
     .card:hover img {
       transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(255,204,0,0.5);
+      box-shadow: 0 0 20px #ffd633;
     }
 
     .tabela {
@@ -148,6 +146,7 @@
     .tabela th {
       background-color: #ffcc00;
       color: #000;
+      text-shadow: 0 0 5px #ffd633;
     }
 
     .tabela tr:hover {
@@ -160,8 +159,10 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
-      box-shadow: 0 -4px 10px rgba(0,0,0,0.7);
+      box-shadow: 0 -4px 15px rgba(255,204,0,0.5);
+      text-shadow: 0 0 5px #ffd633;
     }
+
   </style>
 </head>
 <body>
