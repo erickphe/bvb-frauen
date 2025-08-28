@@ -1,348 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Borussia Dortmund Frauen</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #111;
-  color: #f5f5f5;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borussia Dortmund Feminino</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
 
-/* Header */
-header {
-  background: linear-gradient(90deg, #000, #ffcc00);
-  padding: 20px;
-  text-align: center;
-  color: #000;
-  box-shadow: 0 4px 15px rgba(255,204,0,0.5);
-}
+    header {
+      background: linear-gradient(to right, #000, #FFD600);
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #ffcc00;
-  text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00;
-  animation: neonHeader 2s ease-in-out infinite alternate;
-}
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #000;
+    }
 
-@keyframes neonHeader {
-  0% { text-shadow: 0 0 5px #ffd633, 0 0 15px #ffcc00; }
-  100% { text-shadow: 0 0 20px #ffd633, 0 0 35px #ffcc00, 0 0 50px #ffd633; }
-}
+    section {
+      padding: 40px 20px;
+    }
 
-/* Navigation */
-nav {
-  background-color: #222;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  flex-wrap: wrap;
-}
+    h2 {
+      color: #FFD600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
 
-nav a {
-  color: #ffcc00;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  position: relative;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: #ffcc00;
-  transition: 0.4s;
-}
+    .card {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
 
-nav a:hover::after {
-  width: 100%;
-}
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #FFD600;
+    }
 
-nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ffd633, 0 0 20px #ffcc00;
-}
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
 
-/* Hero */
-.hero {
-  background-color: #ffcc00;
-  color: #000;
-  text-align: center;
-  padding: 60px 20px;
-}
+    .card-content {
+      padding: 15px;
+      text-align: center;
+    }
 
-.hero h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-shadow: none;
-  animation: none;
-  color: #000;
-}
+    .next-game {
+      text-align: center;
+      margin: 40px 0;
+    }
 
-.hero a {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #000;
-  color: #ffcc00;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: 10px;
-}
+    .next-game a {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #FFD600;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
 
-.hero a:hover {
-  background: #ffd633;
-  color: #000;
-  box-shadow: 0 0 20px #ffd633;
-}
+    .next-game a:hover {
+      background-color: #e6c200;
+      box-shadow: 0 0 20px #FFD600;
+    }
 
-/* Sections */
-section {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
+    footer {
+      background: #000;
+      color: #FFD600;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-h2 {
-  color: #ffcc00;
-  margin-bottom: 20px;
-  display: inline-block;
-  text-shadow: 0 0 5px #ffd633;
-  animation: neonTitle 2s ease-in-out infinite alternate;
-}
+    footer a {
+      color: #FFD600;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
 
-@keyframes neonTitle {
-  0% { text-shadow: 0 0 5px #ffd633, 0 0 10px #ffcc00; }
-  100% { text-shadow: 0 0 15px #ffd633, 0 0 30px #ffcc00, 0 0 50px #ffd633; }
-}
-
-/* Grid cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #1c1c1c;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffd633;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card img {
-  width: 100%;
-  height: 260px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  object-fit: cover;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 30px #ffcc00, 0 0 50px #ffd633, 0 0 70px #ffcc00, 0 0 80px #fff;
-}
-
-.card:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ffd633, 0 0 40px #fff;
-}
-
-/* Tables */
-.tabela {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.tabela th, .tabela td {
-  border: 1px solid #555;
-  padding: 8px;
-  text-align: center;
-  transition: background 0.3s;
-}
-
-.tabela th {
-  background-color: #ffcc00;
-  color: #000;
-  text-shadow: 0 0 5px #ffd633;
-}
-
-.tabela tr:hover {
-  background-color: rgba(255,204,0,0.2);
-}
-
-/* Footer */
-footer {
-  background: #000;
-  color: #ffcc00;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  box-shadow: 0 -4px 15px rgba(255,204,0,0.5);
-  text-shadow: 0 0 5px #ffd633;
-}
-</style>
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Borussia Dortmund Frauen</h1>
-</header>
+  <header>
+    <h1>Borussia Dortmund Feminino</h1>
+  </header>
 
-<div class="hero">
-  <h2>HEJA BVB</h2>
-  <a href="#jogos">Ver Jogos</a>
-</div>
+  <section>
+    <h2>Elenco Atual</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fGZQ9ic9Pqcm8PzJHp7iVb4ErbJQLWmkIA&s" alt="Rita Schumacher">
+        <div class="card-content">
+          <h3>Rita Schumacher</h3>
+          <p>Atacante - Jogadora rápida e habilidosa.</p>
+        </div>
+      </div>
 
-<nav>
-  <a href="#elenco">Elenco</a>
-  <a href="#staff">Staff</a>
-  <a href="#titulos">Títulos</a>
-  <a href="#jogos">Próximos Jogos</a>
-  <a href="#marcantes">Jogadoras Marcantes</a>
-  <a href="#promissoras">Promissoras</a>
-  <a href="#historicos">Jogos Históricos</a>
-</nav>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6lYFj1Xj9vefQMRK_vsYIIGyYnB-B3yug&s" alt="Dana Marquardt">
+        <div class="card-content">
+          <h3>Dana Marquardt</h3>
+          <p>Meio-campo - Inteligência tática e passes precisos.</p>
+        </div>
+      </div>
 
-<section id="elenco">
-  <h2>Elenco 2025/26</h2>
-  <table class="tabela">
-    <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
-    <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
-    <tr><td>2</td><td>Böger</td><td>Minha</td><td>Defesa</td></tr>
-    <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
-    <tr><td>5</td><td>Jabbes</td><td>Jasmim</td><td>Ataque</td></tr>
-    <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
-    <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
-    <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
-    <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
-    <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
-    <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
-    <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
-    <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
-    <tr><td>16</td><td>Wisniewski</td><td>Lúcia</td><td>Ataque</td></tr>
-    <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
-    <tr><td>18</td><td>Árvore</td><td>Celina</td><td>Defesa</td></tr>
-    <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
-    <tr><td>20</td><td>Vogel</td><td>Ana-Sophie</td><td>Defesa</td></tr>
-    <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
-    <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
-    <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
-    <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
-    <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
-    <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
-    <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
-    <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
-  </table>
-</section>
-
-<section id="staff">
-  <h2>Staff Técnico</h2>
-  <ul>
-    <li>Markus Högner — Treinador Principal</li>
-    <li>Tim Treude — Treinador Assistente</li>
-    <li>Dustin Wurst — Treinador Assistente</li>
-    <li>Josefina Plehn — Treinadora de Goleiras</li>
-    <li>Luísa Schulz — Fisioterapeuta</li>
-    <li>Benedito Terschluse — Cientista Esportivo</li>
-    <li>Marcel Merkel — Líder de Gestão de Equipe</li>
-    <li>Luísa Bergmann — Gerente de Equipe</li>
-  </ul>
-</section>
-
-<section id="titulos">
-  <h2>Títulos Conquistados</h2>
-  <ul>
-    <li>Kreisliga A Campeãs — 2021/22</li>
-    <li>Bezirksliga 4 Campeãs — 2022/23</li>
-    <li>Landesliga Staffel 2 Campeãs — 2023/24</li>
-    <li>Verbandsliga Westfalen / Westfalenliga Campeãs — 2024/25</li>
-    <li>Kreispokal — 4 vezes seguidas (2021/22 a 2024/25)</li>
-  </ul>
-</section>
-
-<section id="jogos">
-  <h2>Próximos Jogos</h2>
-  <table class="tabela">
-    <tr><th>Data</th><th>Adversário</th></tr>
-    <tr><td>31/08</td><td>1. FC Köln II</td></tr>
-    <tr><td>07/09</td><td>Borussia Mönchengladbach II</td></tr>
-  </table>
-</section>
-
-<section id="marcantes">
-  <h2>Jogadoras Marcantes da História</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schroer.jpg" alt="Sandra Schröer">
-      <h3>Sandra Schröer</h3>
-      <p>#1 • Goleira</p>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" alt="Ronja">
+        <div class="card-content">
+          <h3>Ronja</h3>
+          <p>Zagueira - Forte na defesa e liderança em campo.</p>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl">
-      <h3>Vanessa Kuhl</h3>
-      <p>Atacante decisiva e símbolo da equipe</p>
-    </div>
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe">
-      <h3>Marie Grothe</h3>
-      <p>Atacante mortal que marcou época no time</p>
-    </div>
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt">
-      <h3>Mandy Reinhardt</h3>
-      <p>Referência em grandes momentos históricos</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="promissoras">
-  <h2>Jogadoras Promissoras</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/schumacher.jpg" alt="Rita Schumacher">
-      <h3>Rita Schumacher</h3>
-      <p>Ataque promissora</p>
-    </div>
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/marquardt.jpg" alt="Dana Marquardt">
-      <h3>Dana Marquardt</h3>
-      <p>Ataque promissora</p>
-    </div>
-    <div class="card">
-      <img src="https://www.darowski.com/bvb/assets/images/frauen/365/leubner.jpg" alt="Ronja Leubner">
-      <h3>Ronja Leubner</h3>
-      <p>Meio-campo promissora</p>
-    </div>
-  </div>
-</section>
+  <section>
+    <h2>Jogadoras Promissoras</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.imgur.com/DFLsample1.jpg" alt="Promissora 1">
+        <div class="card-content">
+          <h3>Promissora 1</h3>
+          <p>Destaque da base com grande potencial.</p>
+        </div>
+      </div>
 
-<section id="historicos">
-  <h2>Jogos Históricos</h2>
-  <p><strong>Borussia Dortmund x Schalke 04</strong> — Um rivais lendário: vitória do Dortmund por 2x0 na final da Kreispokal.</p>
-</section>
+      <div class="card">
+        <img src="https://i.imgur.com/DFLsample2.jpg" alt="Promissora 2">
+        <div class="card-content">
+          <h3>Promissora 2</h3>
+          <p>Atacante jovem e muito veloz.</p>
+        </div>
+      </div>
 
-<footer>
-  <p>© 2025 Borussia Dortmund Frauen | @BVBFEMBR no X e Instagram</p>
-</footer>
+      <div class="card">
+        <img src="https://i.imgur.com/DFLsample3.jpg" alt="Promissora 3">
+        <div class="card-content">
+          <h3>Promissora 3</h3>
+          <p>Goleira com reflexos impressionantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-game">
+    <a href="#">HEJA BVB</a>
+  </section>
+
+  <footer>
+    <p>Siga-nos no <a href="https://x.com/BVBFEMBR" target="_blank">X</a> e <a href="https://instagram.com/BVBFEMBR" target="_blank">Instagram</a></p>
+  </footer>
 
 </body>
 </html>
