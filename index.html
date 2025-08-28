@@ -5,53 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borussia Dortmund Feminino</title>
   <style>
-    body {
+    /* RESET */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
     header {
-      background: linear-gradient(to right, #000, #FFD600);
-      color: black;
-      padding: 20px;
+      background: linear-gradient(135deg, #000, #fcd307);
+      padding: 40px 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #000;
-    }
-
-    section {
-      padding: 40px 20px;
-    }
-
-    h2 {
-      color: #FFD600;
-      margin-bottom: 20px;
+      font-size: 3rem;
       text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #000;
+      text-shadow: 2px 2px 6px #fcd307;
     }
 
+    /* SECTIONS */
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #fcd307;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #fcd307;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      justify-items: center;
     }
 
     .card {
-      background: #222;
-      border-radius: 12px;
+      background: #1a1a1a;
+      border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
       transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px #FFD600;
+      width: 240px;
     }
 
     .card img {
@@ -60,122 +75,145 @@
       object-fit: cover;
     }
 
-    .card-content {
-      padding: 15px;
-      text-align: center;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #fcd307;
     }
 
-    .next-game {
-      text-align: center;
-      margin: 40px 0;
+    .card h3 {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      color: #fcd307;
     }
 
-    .next-game a {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #FFD600;
+    /* PRÓXIMOS JOGOS */
+    .proximos-jogos {
+      background: linear-gradient(135deg, #fcd307, #000);
       color: #000;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .next-game a:hover {
-      background-color: #e6c200;
-      box-shadow: 0 0 20px #FFD600;
-    }
-
-    footer {
-      background: #000;
-      color: #FFD600;
-      text-align: center;
-      padding: 20px;
+      border-radius: 15px;
+      padding: 40px 20px;
       margin-top: 40px;
     }
 
-    footer a {
-      color: #FFD600;
+    .proximos-jogos h2 {
+      color: #000;
+      border-bottom: 2px solid #000;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #000;
+      color: #fcd307;
+      padding: 14px 28px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background: #fcd307;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    /* TÍTULOS */
+    .titulos p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #fcd307;
       margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Borussia Dortmund Feminino</h1>
   </header>
 
-  <section>
-    <h2>Elenco Atual</h2>
+  <!-- ELENCO -->
+  <section class="section">
+    <h2>Elenco</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fGZQ9ic9Pqcm8PzJHp7iVb4ErbJQLWmkIA&s" alt="Rita Schumacher">
-        <div class="card-content">
-          <h3>Rita Schumacher</h3>
-          <p>Atacante - Jogadora rápida e habilidosa.</p>
-        </div>
+        <img src="images/dana-marquardt.jpg" alt="Dana Marquardt">
+        <h3>Dana Marquardt</h3>
       </div>
-
       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6lYFj1Xj9vefQMRK_vsYIIGyYnB-B3yug&s" alt="Dana Marquardt">
-        <div class="card-content">
-          <h3>Dana Marquardt</h3>
-          <p>Meio-campo - Inteligência tática e passes precisos.</p>
-        </div>
+        <img src="images/rita-schumacher.jpg" alt="Rita Schumacher">
+        <h3>Rita Schumacher</h3>
       </div>
-
       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" alt="Ronja">
-        <div class="card-content">
-          <h3>Ronja</h3>
-          <p>Zagueira - Forte na defesa e liderança em campo.</p>
-        </div>
+        <img src="images/ronja-krueger.jpg" alt="Ronja Krüger">
+        <h3>Ronja Krüger</h3>
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- JOGADORAS PROMISSORAS -->
+  <section class="section">
     <h2>Jogadoras Promissoras</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://i.imgur.com/DFLsample1.jpg" alt="Promissora 1">
-        <div class="card-content">
-          <h3>Promissora 1</h3>
-          <p>Destaque da base com grande potencial.</p>
-        </div>
+        <img src="images/promissora1.jpg" alt="Jogadora Promissora 1">
+        <h3>Promissora 1</h3>
       </div>
-
       <div class="card">
-        <img src="https://i.imgur.com/DFLsample2.jpg" alt="Promissora 2">
-        <div class="card-content">
-          <h3>Promissora 2</h3>
-          <p>Atacante jovem e muito veloz.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://i.imgur.com/DFLsample3.jpg" alt="Promissora 3">
-        <div class="card-content">
-          <h3>Promissora 3</h3>
-          <p>Goleira com reflexos impressionantes.</p>
-        </div>
+        <img src="images/promissora2.jpg" alt="Jogadora Promissora 2">
+        <h3>Promissora 2</h3>
       </div>
     </div>
   </section>
 
-  <section class="next-game">
-    <a href="#">HEJA BVB</a>
+  <!-- PRÓXIMOS JOGOS -->
+  <section class="section proximos-jogos">
+    <h2>Próximos Jogos</h2>
+    <p>Borussia Dortmund ⚫🟡 x Adversário</p>
+    <p>Data: 15/09/2025 - 18:00</p>
+    <a href="#" class="btn">HEJA BVB</a>
   </section>
 
+  <!-- TÍTULOS -->
+  <section class="section titulos">
+    <h2>Títulos</h2>
+    <p>🏆 Campeonatos Regionais</p>
+    <p>🏆 Copa Local</p>
+    <p>🏆 Supercopa Feminina</p>
+  </section>
+
+  <!-- RODAPÉ -->
   <footer>
-    <p>Siga-nos no <a href="https://x.com/BVBFEMBR" target="_blank">X</a> e <a href="https://instagram.com/BVBFEMBR" target="_blank">Instagram</a></p>
+    <p>Siga-nos:</p>
+    <a href="https://x.com/bvbfembr" target="_blank">@bvbfembr no X</a>
+    <a href="https://instagram.com/bvbfembr" target="_blank">@bvbfembr no Instagram</a>
   </footer>
 
 </body>
