@@ -28,11 +28,6 @@
   header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.95; }
 
   /* NAV */
-  nav{
-    background:#0f0f0f;
-    border-top:1px solid rgba(255,204,0,0.03);
-    position:sticky; top:0; z-index:50;
-  }
   .nav-inner{ max-width:1200px; margin:0 auto; display:flex; gap:12px; align-items:center; padding:8px 16px; justify-content:space-between; }
   .nav-links{ display:flex; gap:10px; flex-wrap:wrap; }
   .nav-links a{
@@ -101,8 +96,6 @@
     .burger{ display:block; }
     .nav-links{ display:none; position:relative; width:100%; gap:0; background:#0d0d0d; padding:10px 12px; border-top:1px solid rgba(255,204,0,0.03);}
     .nav-links.open{ display:flex; flex-direction:column; }
-    header{ padding:12px 14px; }
-    .hero h2{ font-size:2rem; }
     .card img{ height:180px; }
   }
 </style>
@@ -161,11 +154,11 @@
   </article>
 </section>
 
-<!-- ELENCO -->
+<!-- ELENCO HISTÓRICO -->
 <section id="elenco" class="container" aria-labelledby="elencoTitle">
   <h2 class="section-title" id="elencoTitle">👥 Elenco Histórico</h2>
 
-  <div class="grid" style="margin-bottom:18px;">
+  <div class="grid">
     <div class="card">
       <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl">
       <h3>Vanessa Kuhl</h3>
@@ -184,11 +177,30 @@
       <p>Atacante — Experiência e faro de gol</p>
     </div>
   </div>
-
-  <!-- Resto do HTML original continua igual (tabelas, jogadoras, promissoras, jogos, staff, títulos, históricos, rodapé) -->
-  <!-- TODO: você pode colar seu HTML original completo daqui em diante, sem alterar nada -->
-  
 </section>
+
+<!-- PROMISSORAS -->
+<section id="promissoras" class="container" aria-labelledby="promissorasTitle">
+  <h2 class="section-title" id="promissorasTitle">🌟 Jogadoras Promissoras</h2>
+  <div class="grid">
+    <div class="card">
+      <img class="promissora" src="https://www.darowski.com/bvb/assets/images/frauen/365/jabbes.jpg" alt="Jasmin Jabbes">
+      <h3>Jasmin Jabbes</h3>
+      <p>Atacante — Destaque da temporada</p>
+    </div>
+
+    <div class="card">
+      <img class="promissora" src="https://www.darowski.com/bvb/assets/images/frauen/365/marquardt.jpg" alt="Dana Marquardt">
+      <h3>Dana Marquardt</h3>
+      <p>Atacante — Potencial incrível</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Borussia Dortmund Feminino • Fan site. <a href="#top">Topo</a></p>
+</footer>
 
 <!-- BACK TO TOP -->
 <button id="toTop" class="top-btn" aria-label="Voltar ao topo" title="Voltar ao topo">⬆</button>
@@ -221,5 +233,4 @@
 
 </body>
 </html>
-
 
