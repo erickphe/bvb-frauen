@@ -15,6 +15,7 @@
         <ul class="flex space-x-4">
           <li><a href="#noticias" class="hover:text-white">Notícias</a></li>
           <li><a href="#jogadoras" class="hover:text-white">Jogadoras</a></li>
+          <li><a href="#estatisticas" class="hover:text-white">Estatísticas</a></li>
           <li><a href="#jogos" class="hover:text-white">Jogos</a></li>
           <li><a href="#sobre" class="hover:text-white">Sobre</a></li>
         </ul>
@@ -25,7 +26,7 @@
   <!-- Hero -->
   <section class="bg-yellow-400 text-black text-center py-12">
     <h2 class="text-3xl font-extrabold">Fanpage não-oficial do Borussia Dortmund Feminino</h2>
-    <p class="mt-2 text-lg">Acompanhe notícias, elenco e calendário de jogos do time feminino do BVB!</p>
+    <p class="mt-2 text-lg">Acompanhe notícias, elenco, estatísticas e calendário de jogos do time feminino do BVB!</p>
   </section>
 
   <!-- Notícias -->
@@ -80,7 +81,60 @@
     </div>
   </section>
 
-  <!-- Próximos Jogos -->
+  <!-- Estatísticas -->
+  <section id="estatisticas" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-bold mb-6 text-center">📊 Estatísticas (2021–2024)</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse bg-white shadow-md rounded-2xl overflow-hidden text-center">
+        <thead class="bg-yellow-400 text-black">
+          <tr>
+            <th class="p-3">Jogadora</th>
+            <th class="p-3">Jogos</th>
+            <th class="p-3">Gols</th>
+            <th class="p-3">Assistências</th>
+            <th class="p-3">Total G+A</th>
+            <th class="p-3">Média por Jogo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="p-3 font-bold">Vanessa Kuhl</td>
+            <td class="p-3">42</td>
+            <td class="p-3">47</td>
+            <td class="p-3">36</td>
+            <td class="p-3">83</td>
+            <td class="p-3">1,98</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3 font-bold">Marie Grothe</td>
+            <td class="p-3">26</td>
+            <td class="p-3">35</td>
+            <td class="p-3">15</td>
+            <td class="p-3">50</td>
+            <td class="p-3">1,92</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3 font-bold">Mandy Reinhardt</td>
+            <td class="p-3">26</td>
+            <td class="p-3">34</td>
+            <td class="p-3">14</td>
+            <td class="p-3">48</td>
+            <td class="p-3">1,85</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-bold">Ana Haslsteiner</td>
+            <td class="p-3">45</td>
+            <td class="p-3">-</td>
+            <td class="p-3">-</td>
+            <td class="p-3">-</td>
+            <td class="p-3">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Próximos Jogos (dinâmico via JSON) -->
   <section id="jogos" class="container mx-auto py-12 px-4">
     <h3 class="text-2xl font-bold mb-6 text-center">📅 Próximos Jogos</h3>
     <div class="overflow-x-auto">
@@ -94,28 +148,8 @@
             <th class="p-3">Competição</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="border-b">
-            <td class="p-3">12/09/2025</td>
-            <td>Borussia Dortmund</td>
-            <td>-</td>
-            <td>FC Schalke 04</td>
-            <td>Westfalenpokal</td>
-          </tr>
-          <tr class="border-b bg-gray-50">
-            <td class="p-3">20/09/2025</td>
-            <td>Sportfreunde Siegen</td>
-            <td>-</td>
-            <td>Borussia Dortmund</td>
-            <td>Regionalliga Oeste</td>
-          </tr>
-          <tr>
-            <td class="p-3">27/09/2025</td>
-            <td>Borussia Dortmund</td>
-            <td>-</td>
-            <td>SV Menden</td>
-            <td>Regionalliga Oeste</td>
-          </tr>
+        <tbody id="games-table">
+          <tr><td colspan="5" class="p-3">Carregando jogos...</td></tr>
         </tbody>
       </table>
     </div>
@@ -124,12 +158,37 @@
   <!-- Sobre -->
   <section id="sobre" class="container mx-auto py-12 px-4">
     <h3 class="text-2xl font-bold mb-4 text-center">ℹ️ Sobre este site</h3>
-    <p class="text-gray-700 text-center max-w-2xl mx-auto">Este é um projeto <strong>fan made</strong> criado para celebrar o Borussia Dortmund Feminino. Aqui você encontra notícias, informações, calendário de jogos e destaques das jogadoras do time. Não é o site oficial do clube.</p>
+    <p class="text-gray-700 text-center max-w-2xl mx-auto">Este é um projeto <strong>fan made</strong> criado para celebrar o Borussia Dortmund Feminino. Aqui você encontra notícias, informações, estatísticas, calendário de jogos e destaques das jogadoras do time. Não é o site oficial do clube.</p>
   </section>
 
   <!-- Footer -->
   <footer class="bg-black text-yellow-400 text-center py-4 mt-12">
     <p>&copy; 2025 Fanpage Borussia Dortmund Frauen. Criado por fãs, para fãs.</p>
   </footer>
+
+  <!-- Script para carregar jogos -->
+  <script>
+    fetch('games.json')
+      .then(response => response.json())
+      .then(jogos => {
+        const tbody = document.getElementById('games-table');
+        tbody.innerHTML = '';
+        jogos.forEach(jogo => {
+          const tr = document.createElement('tr');
+          tr.classList.add('border-b');
+          tr.innerHTML = `
+            <td class="p-3">${jogo.data}</td>
+            <td class="p-3">${jogo.mandante}</td>
+            <td class="p-3">${jogo.placar}</td>
+            <td class="p-3">${jogo.visitante}</td>
+            <td class="p-3">${jogo.competicao}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(() => {
+        document.getElementById('games-table').innerHTML = '<tr><td colspan="5" class="p-3 text-red-500">Erro ao carregar jogos.</td></tr>';
+      });
+  </script>
 </body>
 </html>
