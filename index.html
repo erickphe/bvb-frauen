@@ -1,263 +1,336 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Borussia Dortmund Frauen Fanpage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Borussia Dortmund Frauen — Fanpage</title>
+  <meta name="description" content="Fanpage não oficial do Borussia Dortmund Feminino — notícias, elenco, estatísticas e calendário de jogos." />
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pequenos ajustes customizados */
+    .hero-img { background-image: url('https://wallpapercave.com/wp/wp9517031.jpg'); background-size:cover; background-position:center; }
+    .card-hover:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-  <!-- Header -->
-  <header class="bg-black text-yellow-400 p-4 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Borussia Dortmund Frauen</h1>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- HEADER -->
+  <header class="bg-black text-yellow-400">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Borussia_Dortmund_logo.svg" alt="BVB" class="w-10 h-10 rounded-sm bg-white p-1">
+        <div>
+          <h1 class="text-xl font-extrabold">Borussia Dortmund Frauen</h1>
+          <div class="text-xs text-yellow-300">Fan made — não oficial</div>
+        </div>
+      </div>
+
       <nav>
-        <ul class="flex space-x-4">
+        <button id="btn-menu" class="md:hidden text-yellow-300 px-2 py-1">☰</button>
+        <ul id="menu" class="hidden md:flex gap-6 items-center text-sm">
           <li><a href="#noticias" class="hover:text-white">Notícias</a></li>
           <li><a href="#jogadoras" class="hover:text-white">Jogadoras</a></li>
           <li><a href="#estatisticas" class="hover:text-white">Estatísticas</a></li>
           <li><a href="#desempenho" class="hover:text-white">Desempenho</a></li>
           <li><a href="#titulos" class="hover:text-white">Títulos</a></li>
           <li><a href="#jogos" class="hover:text-white">Jogos</a></li>
-          <li><a href="#sobre" class="hover:text-white">Sobre</a></li>
+          <li><a href="#contato" class="hover:text-white">Contato</a></li>
         </ul>
       </nav>
     </div>
+    <!-- menu mobile -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black/80 text-yellow-300 px-4 pb-4">
+      <a class="block py-2" href="#noticias">Notícias</a>
+      <a class="block py-2" href="#jogadoras">Jogadoras</a>
+      <a class="block py-2" href="#estatisticas">Estatísticas</a>
+      <a class="block py-2" href="#desempenho">Desempenho</a>
+      <a class="block py-2" href="#titulos">Títulos</a>
+      <a class="block py-2" href="#jogos">Jogos</a>
+      <a class="block py-2" href="#contato">Contato</a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-yellow-400 text-black text-center py-12">
-    <h2 class="text-3xl font-extrabold">Fanpage não-oficial do Borussia Dortmund Feminino</h2>
-    <p class="mt-2 text-lg">Acompanhe notícias, elenco, estatísticas, desempenho e calendário de jogos do time feminino do BVB!</p>
+  <!-- HERO -->
+  <section class="hero-img h-56 md:h-72 flex items-center">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-yellow-400 text-3xl md:text-4xl font-extrabold drop-shadow-lg">Heja BVB — Borussia Dortmund Feminino</h2>
+      <p class="text-white/90 mt-2">Notícias, elenco, estatísticas e calendário — tudo feito por torcedores.</p>
+    </div>
   </section>
 
-  <!-- Notícias -->
-  <section id="noticias" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">📰 Últimas Notícias</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      
-      <!-- Notícia 1 -->
-      <article class="bg-white rounded-2xl shadow-md overflow-hidden">
-        <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Vitória contra o Leverkusen" class="w-full h-56 object-cover">
-        <div class="p-4">
-          <h4 class="text-xl font-bold mb-2">Vitória por 6x0 contra o Leverkusen</h4>
-          <p class="text-gray-700">A equipe feminina do Borussia Dortmund iniciou sua primeira temporada na Regionalliga Oeste com uma vitória em casa. A equipe recém-promovida derrotou o sub-23 do Bayer 04 Leverkusen por 6 a 0 diante de sua torcida no estádio Rote Erde. Os gols foram marcados por Jasmin Jabbes (3), Dana Marquardt (2) e Ronja Leubner.</p>
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- NOTÍCIAS -->
+    <section id="noticias">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">📰 Últimas Notícias</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- noticia 1 -->
+        <article class="bg-white rounded-xl overflow-hidden shadow card-hover">
+          <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="BVB vs Leverkusen" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Vitória por 6x0 contra o Leverkusen</h4>
+            <p class="mt-2 text-sm text-gray-700">A equipe feminina do Borussia Dortmund iniciou sua primeira temporada na Regionalliga Oeste com uma vitória em casa contra o sub-23 do Bayer 04 Leverkusen. Resultado: <strong>6–0</strong>. Gols: Jasmin Jabbes (3), Dana Marquardt (2) e Ronja Leubner.</p>
+          </div>
+        </article>
+
+        <!-- noticia 2 -->
+        <article class="bg-white rounded-xl overflow-hidden shadow card-hover">
+          <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-1:News-TeamStage-Desktop?ts=1757066190823&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="BVB vs Thülen" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Estreia na Westfalenpokal com vitória</h4>
+            <p class="mt-2 text-sm text-gray-700">As mulheres do BVB estrearam na Westfalenpokal vencendo o SV Thülen por <strong>4–0</strong> no segundo tempo — gols de Dana Marquardt (2), Ann-Sophie Vogel e Hedda Wahle. Próxima fase: clássico contra o FC Schalke 04.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- JOGADORAS (fanmade) -->
+    <section id="jogadoras">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">⭐ Jogadoras em Destaque (Fanmade)</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Vanessa Kuhl -->
+        <div class="bg-white rounded-xl p-4 text-center shadow card-hover">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl" class="w-36 h-36 object-cover rounded-full mx-auto mb-3">
+          <h4 class="font-bold">Vanessa Kuhl</h4>
+          <p class="text-sm text-gray-600">Atacante • Gols: 47 • Assistências: 36</p>
         </div>
-      </article>
 
-      <!-- Notícia 2 -->
-      <article class="bg-white rounded-2xl shadow-md overflow-hidden">
-        <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-1:News-TeamStage-Desktop?ts=1757066190823&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Vitória contra o SV Thülen" class="w-full h-56 object-cover">
-        <div class="p-4">
-          <h4 class="text-xl font-bold mb-2">Estreia na Westfalenpokal com vitória</h4>
-          <p class="text-gray-700">Na noite de quinta-feira, as mulheres do BVB iniciaram a nova temporada da Westfalenpokal como atuais campeãs, em seu jogo contra o SV Thülen. O jogo terminou sem gols no intervalo, após o qual dois gols de Dana Marquardt e um de Ann-Sophie Vogel e Hedda Wahle, respectivamente, no segundo tempo, deram ao BVB uma vitória por 4 a 0. A próxima rodada da Westfalenpokal será o clássico contra o FC Schalke 04.</p>
+        <!-- Marie Grothe -->
+        <div class="bg-white rounded-xl p-4 text-center shadow card-hover">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe" class="w-36 h-36 object-cover rounded-full mx-auto mb-3">
+          <h4 class="font-bold">Marie Grothe</h4>
+          <p class="text-sm text-gray-600">Meio-campo • Gols: 35 • Assistências: 15</p>
         </div>
-      </article>
 
-    </div>
-  </section>
+        <!-- Mandy Reinhardt -->
+        <div class="bg-white rounded-xl p-4 text-center shadow card-hover">
+          <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt" class="w-36 h-36 object-cover rounded-full mx-auto mb-3">
+          <h4 class="font-bold">Mandy Reinhardt</h4>
+          <p class="text-sm text-gray-600">Atacante • Gols: 34 • Assistências: 14</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Jogadoras -->
-  <section id="jogadoras" class="bg-gray-200 py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">👩‍🦱 Jogadoras em Destaque</h3>
-    <div class="grid md:grid-cols-3 gap-6 container mx-auto">
-      
-      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
-        <h4 class="font-bold text-lg">Vanessa Kuhl</h4>
-        <p class="text-gray-600">Atacante</p>
+    <!-- ELENCO OFICIAL (dinâmico se players.json existir) -->
+    <section id="elenco">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">👥 Elenco Oficial (fonte: bvb.de)</h3>
+      <div id="roster" class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Fallback: hard-coded list (aparecerá se players.json não existir) -->
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Laura van der Laan</h4><p class="text-sm text-gray-600">Goleira</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Mia Böger</h4><p class="text-sm text-gray-600">Defesa</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Jenske Steenwijk</h4><p class="text-sm text-gray-600">Defesa</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Jasmin Jabbes</h4><p class="text-sm text-gray-600">Ataque</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Dana Marquardt</h4><p class="text-sm text-gray-600">Ataque</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-bold">Rita Schumacher</h4><p class="text-sm text-gray-600">Ataque</p>
+        </div>
+        <!-- Se players.json existir, o script abaixo sobrepõe esse conteúdo -->
+      </div>
+    </section>
+
+    <!-- ESTATÍSTICAS GERAIS -->
+    <section id="estatisticas">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">📊 Estatísticas (2021 → 2025)</h3>
+
+      <!-- Top scorers cards -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-xl shadow">
+          <div class="text-sm text-gray-500">Artilheira (Total)</div>
+          <div class="text-xl font-bold">Vanessa Kuhl — 70 gols</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <div class="text-sm text-gray-500">Assistências (Total)</div>
+          <div class="text-xl font-bold">Vanessa Kuhl — 46</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <div class="text-sm text-gray-500">Jogos (Total)</div>
+          <div class="text-xl font-bold">Ana Haslsteiner — 64</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <div class="text-sm text-gray-500">Média G+A / Jogo</div>
+          <div class="text-xl font-bold">Vanessa Kuhl — 1.93</div>
+        </div>
       </div>
 
-      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
-        <h4 class="font-bold text-lg">Marie Grothe</h4>
-        <p class="text-gray-600">Meio-campo</p>
+      <!-- tabela histórica detalhada -->
+      <div class="overflow-x-auto bg-white rounded-xl shadow p-4">
+        <table class="w-full text-left">
+          <thead class="bg-yellow-400 text-black">
+            <tr>
+              <th class="p-2">Jogadora</th><th class="p-2">Gols (2021–25)</th><th class="p-2">Assistências</th><th class="p-2">G+A</th><th class="p-2">Jogos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="p-2 font-semibold">Vanessa Kuhl</td><td class="p-2">70</td><td class="p-2">46</td><td class="p-2">116</td><td class="p-2">60</td></tr>
+            <tr class="border-b"><td class="p-2 font-semibold">Marie Grothe</td><td class="p-2">54</td><td class="p-2">25</td><td class="p-2">79</td><td class="p-2">49</td></tr>
+            <tr class="border-b"><td class="p-2 font-semibold">Mandy Reinhardt</td><td class="p-2">51</td><td class="p-2">20</td><td class="p-2">71</td><td class="p-2">48</td></tr>
+            <tr><td class="p-2 font-semibold">Dana Marquardt</td><td class="p-2">46</td><td class="p-2">4</td><td class="p-2">50</td><td class="p-2">30</td></tr>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
-        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
-        <h4 class="font-bold text-lg">Mandy Reinhardt</h4>
-        <p class="text-gray-600">Atacante</p>
+    <!-- DESEMPENHO 24/25 (tabela da temporada) -->
+    <section id="desempenho">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">📈 Desempenho — Temporada 2024/25</h3>
+      <div class="overflow-x-auto bg-white rounded-xl shadow p-4">
+        <table class="w-full text-left">
+          <thead class="bg-yellow-400 text-black">
+            <tr><th class="p-2">Nome</th><th class="p-2">Posição</th><th class="p-2">Jogos</th><th class="p-2">Gols</th><th class="p-2">Assistências</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="p-2 font-semibold">Dana Marquardt</td><td class="p-2">Atacante</td><td class="p-2">11</td><td class="p-2">23</td><td class="p-2">2</td></tr>
+            <tr class="border-b"><td class="p-2 font-semibold">Marie Grothe</td><td class="p-2">Meio-campo</td><td class="p-2">23</td><td class="p-2">19</td><td class="p-2">10</td></tr>
+            <tr class="border-b"><td class="p-2 font-semibold">Finnja Schriek</td><td class="p-2">Meio-campo</td><td class="p-2">11</td><td class="p-2">10</td><td class="p-2">1</td></tr>
+            <tr><td class="p-2 font-semibold">Sarah Giebels</td><td class="p-2">Atacante</td><td class="p-2">19</td><td class="p-2">9</td><td class="p-2">2</td></tr>
+          </tbody>
+        </table>
       </div>
+    </section>
 
+    <!-- TÍTULOS -->
+    <section id="titulos">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">🏆 Conquistas</h3>
+      <ul class="bg-white p-6 rounded-xl shadow max-w-xl">
+        <li class="mb-2"><strong>2021/22</strong> — Campeãs da Kreisliga</li>
+        <li class="mb-2"><strong>2022/23</strong> — Campeãs da Bezirksliga</li>
+        <li class="mb-2"><strong>2023/24</strong> — Campeãs da Landesliga Staffel 2</li>
+        <li class="mb-2"><strong>2024/25</strong> — Campeãs da Verbandsliga Westfalen</li>
+        <li><strong>2019–2025</strong> — 4x Campeãs do Kreispokal</li>
+      </ul>
+    </section>
+
+    <!-- PRÓXIMOS JOGOS (dinâmico via games.json) -->
+    <section id="jogos">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">📅 Próximos Jogos</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow overflow-hidden text-center">
+          <thead class="bg-yellow-400 text-black">
+            <tr>
+              <th class="p-3">Data</th><th class="p-3">Mandante</th><th class="p-3">Placar</th><th class="p-3">Visitante</th><th class="p-3">Competição</th>
+            </tr>
+          </thead>
+          <tbody id="games-table">
+            <tr><td colspan="5" class="p-4 text-gray-500">Carregando jogos...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-600 mt-2">Atualize <code>games.json</code> no repositório para alterar a lista de partidas (veja instruções abaixo).</p>
+    </section>
+
+    <!-- RESULTADOS RECENTES -->
+    <section id="resultados">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">🔁 Resultados Recentes</h3>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <ul class="list-disc pl-5 text-sm text-gray-700">
+          <li>Borussia Dortmund 6–0 Bayer Leverkusen II (Regionalliga Oeste)</li>
+          <li>BVB 4–0 SV Thülen (Westfalenpokal)</li>
+          <!-- adicione manualmente ou via JSON se quiser -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- STAFF -->
+    <section id="staff">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">🧑‍💼 Staff Técnico</h3>
+      <div class="bg-white p-4 rounded-xl shadow max-w-xl">
+        <ul class="text-sm text-gray-700">
+          <li>Markus Högner — Treinador Principal</li>
+          <li>Tim Treude — Assistente</li>
+          <li>Sabine Färber — Treinadora de Goleiras</li>
+          <li>Dustin Wöhrn — Preparador Físico</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTATO / REDES -->
+    <section id="contato">
+      <h3 class="text-2xl font-bold text-yellow-500 mb-4">✉️ Contato & Redes</h3>
+      <div class="bg-white p-4 rounded-xl shadow max-w-xl">
+        <p class="mb-2 text-sm text-gray-700">Siga/entre em contato (página não oficial):</p>
+        <p class="text-sm"><a href="https://www.instagram.com/bvbfembr" target="_blank" class="text-yellow-600 hover:underline">@bvbfembr (Instagram)</a></p>
+        <p class="text-sm mt-2">Quer colaborar com conteúdo? Envie um DM no Instagram ou crie um PR no GitHub com sugestões.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-yellow-400 py-6 mt-8">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+      ⚡ Fanpage não oficial — Conteúdo criado por torcedores. © 2025
     </div>
-  </section>
-
-  <!-- Estatísticas -->
-  <section id="estatisticas" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">📊 Estatísticas (2021–2024)</h3>
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse bg-white shadow-md rounded-2xl overflow-hidden text-center">
-        <thead class="bg-yellow-400 text-black">
-          <tr>
-            <th class="p-3">Jogadora</th>
-            <th class="p-3">Jogos</th>
-            <th class="p-3">Gols</th>
-            <th class="p-3">Assistências</th>
-            <th class="p-3">Total G+A</th>
-            <th class="p-3">Média por Jogo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Vanessa Kuhl</td>
-            <td class="p-3">42</td>
-            <td class="p-3">47</td>
-            <td class="p-3">36</td>
-            <td class="p-3">83</td>
-            <td class="p-3">1,98</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Marie Grothe</td>
-            <td class="p-3">26</td>
-            <td class="p-3">35</td>
-            <td class="p-3">15</td>
-            <td class="p-3">50</td>
-            <td class="p-3">1,92</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Mandy Reinhardt</td>
-            <td class="p-3">26</td>
-            <td class="p-3">34</td>
-            <td class="p-3">14</td>
-            <td class="p-3">48</td>
-            <td class="p-3">1,85</td>
-          </tr>
-          <tr>
-            <td class="p-3 font-bold">Ana Haslsteiner</td>
-            <td class="p-3">45</td>
-            <td class="p-3">-</td>
-            <td class="p-3">-</td>
-            <td class="p-3">-</td>
-            <td class="p-3">-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Desempenho Temporada 2024/25 -->
-  <section id="desempenho" class="bg-gray-200 py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">⚽ Desempenho 2024/25</h3>
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse bg-white shadow-md rounded-2xl overflow-hidden text-center">
-        <thead class="bg-yellow-400 text-black">
-          <tr>
-            <th class="p-3">Nome</th>
-            <th class="p-3">Posição</th>
-            <th class="p-3">Jogos</th>
-            <th class="p-3">Gols</th>
-            <th class="p-3">Assistências</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Dana Marquardt</td>
-            <td class="p-3">Atacante</td>
-            <td class="p-3">11</td>
-            <td class="p-3">23</td>
-            <td class="p-3">2</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Maria Grothe</td>
-            <td class="p-3">Meio-campo</td>
-            <td class="p-3">23</td>
-            <td class="p-3">19</td>
-            <td class="p-3">10</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Finnja Schriek</td>
-            <td class="p-3">Meio-campo</td>
-            <td class="p-3">11</td>
-            <td class="p-3">10</td>
-            <td class="p-3">1</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Sarah Giebels</td>
-            <td class="p-3">Atacante</td>
-            <td class="p-3">19</td>
-            <td class="p-3">9</td>
-            <td class="p-3">2</td>
-          </tr>
-          <tr class="border-b">
-            <td class="p-3 font-bold">Marjana Naceva</td>
-            <td class="p-3">Atacante</td>
-            <td class="p-3">21</td>
-            <td class="p-3">8</td>
-            <td class="p-3">2</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Títulos -->
-  <section id="titulos" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">🏆 Conquistas</h3>
-    <ul class="list-disc list-inside bg-white p-6 rounded-2xl shadow-md max-w-xl mx-auto">
-      <li><strong>2021/22</strong> – Campeãs da Kreisliga</li>
-      <li><strong>2022/23</strong> – Campeãs da Bezirksliga</li>
-      <li><strong>2023/24</strong> – Campeãs da Landesliga Staffel 2</li>
-      <li><strong>2024/25</strong> – Campeãs da Verbandsliga Westfalen (Westfalenliga)</li>
-      <li><strong>2021–2025</strong> – 4 títulos da Kreispokal</li>
-    </ul>
-  </section>
-
-  <!-- Próximos Jogos -->
-  <section id="jogos" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-bold mb-6 text-center">📅 Próximos Jogos</h3>
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse bg-white shadow-md rounded-2xl overflow-hidden text-center">
-        <thead class="bg-yellow-400 text-black">
-          <tr>
-            <th class="p-3">Data</th>
-            <th class="p-3">Mandante</th>
-            <th class="p-3">Placar</th>
-            <th class="p-3">Visitante</th>
-            <th class="p-3">Competição</th>
-          </tr>
-        </thead>
-        <tbody id="games-table">
-          <tr><td colspan="5" class="p-3">Carregando jogos...</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-bold mb-4 text-center">ℹ️ Sobre este site</h3>
-    <p class="text-gray-700 text-center max-w-2xl mx-auto">Este é um projeto <strong>fan made</strong> criado para celebrar o Borussia Dortmund Feminino. Aqui você encontra notícias, informações, estatísticas, desempenho, títulos e calendário de jogos do time. Não é o site oficial do clube.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-yellow-400 text-center py-4 mt-12">
-    <p>&copy; 2025 Fanpage Borussia Dortmund Frauen. Criado por fãs, para fãs.</p>
   </footer>
 
-  <!-- Script para carregar jogos -->
+  <!-- SCRIPTS: menu e carregamento dinâmico (games.json / players.json) -->
   <script>
-    fetch('games.json')
-      .then(response => response.json())
-      .then(jogos => {
-        const tbody = document.getElementById('games-table');
-        tbody.innerHTML = '';
-        jogos.forEach(jogo => {
-          const tr = document.createElement('tr');
-          tr.classList.add('border-b');
-          tr.innerHTML = `
-            <td class="p-3">${jogo.data}</td>
-            <td class="p-3">${jogo.mandante}</td>
-            <td class="p-3">${jogo.placar}</td>
-            <td class="p-3">${jogo.visitante}</td>
-            <td class="p-3">${jogo.competicao}</td>
-          `;
-          tbody.appendChild(tr);
-        });
-      })
-      .catch(() => {
-        document.getElementById('games-table').innerHTML = '<tr><td colspan="5" class="p-3 text-red-500">Erro ao carregar jogos.</td></tr>';
+    // Toggle menu (mobile)
+    document.getElementById('btn-menu').addEventListener('click', () => {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('hidden');
+    });
+
+    // Carrega jogos dinâmicos de games.json (coloque games.json na raiz do repositório)
+    function renderGames(jogos){
+      const tbody = document.getElementById('games-table');
+      tbody.innerHTML = '';
+      if(!jogos || jogos.length === 0){
+        tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-gray-500">Nenhum jogo encontrado.</td></tr>';
+        return;
+      }
+      jogos.forEach(j => {
+        const tr = document.createElement('tr');
+        tr.className = 'border-b';
+        tr.innerHTML = `
+          <td class="p-3">${j.data}</td>
+          <td class="p-3">${j.mandante}</td>
+          <td class="p-3">${j.placar}</td>
+          <td class="p-3">${j.visitante}</td>
+          <td class="p-3">${j.competicao}</td>
+        `;
+        tbody.appendChild(tr);
       });
+    }
+
+    fetch('games.json').then(r => {
+      if(!r.ok) throw 0;
+      return r.json();
+    }).then(data => renderGames(data))
+      .catch(()=> {
+        // fallback: mostra alguns jogos padrão (se games.json não existir)
+        renderGames([
+          {"data":"12/09/2025","mandante":"Borussia Dortmund","placar":"-","visitante":"FC Schalke 04","competicao":"Westfalenpokal"},
+          {"data":"20/09/2025","mandante":"Sportfreunde Siegen","placar":"-","visitante":"Borussia Dortmund","competicao":"Regionalliga Oeste"},
+          {"data":"27/09/2025","mandante":"Borussia Dortmund","placar":"-","visitante":"SV Menden","competicao":"Regionalliga Oeste"}
+        ]);
+      });
+
+    // Carrega elenco dinâmico de players.json (opcional) — se existir, substitui a lista atual
+    fetch('players.json').then(r => {
+      if(!r.ok) throw 0;
+      return r.json();
+    }).then(players => {
+      const roster = document.getElementById('roster');
+      roster.innerHTML = ''; // limpa fallback
+      players.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-4 rounded-xl shadow';
+        card.innerHTML = `<h4 class="font-bold">${p.name}</h4><p class="text-sm text-gray-600">${p.position}${p.number ? ' • #' + p.number : ''}</p>`;
+        roster.appendChild(card);
+      });
+    }).catch(()=>{/* sem players.json é ok */});
   </script>
+
 </body>
 </html>
