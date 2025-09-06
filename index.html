@@ -1,305 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Borussia Dortmund Feminino</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background:#070707; color:#f4f4f4; -webkit-font-smoothing:antialiased;
-  line-height:1.5;
-}
-
-/* HEADER */
-header{
-  background: linear-gradient(90deg,#000 0%, #121212 40%, #ffcc00 100%);
-  padding:20px 16px;
-  display:flex; align-items:center; gap:12px; justify-content:space-between;
-}
-header h1{ color:#ffcc00; font-size:1.4rem; letter-spacing:0.6px; margin-left:8px; }
-header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.95; }
-
-/* NAV */
-.nav-inner{ max-width:1200px; margin:0 auto; display:flex; gap:12px; align-items:center; padding:8px 16px; justify-content:space-between; }
-.nav-links{ display:flex; gap:10px; flex-wrap:wrap; }
-.nav-links a{
-  color:#ffd64d; text-decoration:none; font-weight:700; padding:8px 10px; border-radius:8px;
-  transition:all .16s ease;
-}
-.nav-links a:hover{ color:#fff; background: linear-gradient(90deg, rgba(255,204,0,0.06), rgba(255,204,0,0.02)); transform:translateY(-2px); }
-
-.burger{ display:none; background:transparent; border:0; color:#ffd64d; font-size:1.25rem; cursor:pointer; }
-
-/* HERO */
-.hero{
-  height:56vh; min-height:240px; display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image: url("https://wallpapercave.com/wp/wp9517031.jpg");
-  background-size:cover; background-position:center;
-  position:relative;
-}
-.hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65)); }
-.hero-inner{ position:relative; z-index:2; padding:20px; }
-.hero h2{ color:#ffcc00; font-size:2.6rem; margin-bottom:12px; text-shadow:0 6px 18px rgba(0,0,0,0.7); letter-spacing:1px; }
-.hero .cta{ display:inline-block; background:#ffcc00; color:#000; padding:12px 26px; border-radius:999px; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(255,204,0,0.16); transition:all .18s ease; }
-.hero .cta:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(255,204,0,0.28); }
-
-.container{ max-width:1200px; margin:0 auto; padding:36px 18px; }
-h2.section-title{ color:#ffcc00; margin-bottom:18px; font-size:1.4rem; display:inline-block; text-shadow:0 0 6px rgba(255,204,0,0.06); }
-
-/* CARD GRID */
-.grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
-.card{
-  background:#0f0f0f; border-radius:12px; padding:12px; text-align:center; overflow:hidden;
-  border:1px solid rgba(255,204,0,0.03); box-shadow:0 6px 22px rgba(0,0,0,0.6); transition:transform .22s, box-shadow .22s;
-}
-.card:hover{ 
-  transform:translateY(-8px);
-  box-shadow: 0 0 12px rgba(255,204,0,0.8), 0 0 24px rgba(255,204,0,0.6), 0 6px 22px rgba(255,204,0,0.5);
-}
-.card img{ width:100%; height:200px; object-fit:cover; border-radius:8px; transition:transform .22s, box-shadow .22s; }
-.card img.promissora{ object-fit:contain; background:#000; height:220px; }
-.card h3{ margin:10px 0 6px; color:#ffd64d; font-size:1.02rem; }
-.card p{ color: #e7e7e7; font-size:0.92rem; margin-bottom:6px; }
-
-.article{ background:#0b0b0b; border-radius:12px; overflow:hidden; box-shadow:0 6px 28px rgba(0,0,0,0.6); }
-.article img{ width:100%; height:320px; object-fit:cover; display:block; }
-.article .body{ padding:16px; color:#eaeaea; }
-
-.table{ width:100%; border-collapse:collapse; margin-top:12px; }
-.table th,.table td{ padding:10px; border:1px solid rgba(255,255,255,0.04); text-align:left; font-size:0.95rem; }
-.table th{ background:#ffcc00; color:#000; }
-
-footer{ background:#000; color:#ffd64d; padding:26px 18px; margin-top:36px; text-align:center; box-shadow:0 -6px 18px rgba(255,204,0,0.05); }
-footer a{ color:#ffd64d; text-decoration:none; font-weight:700; margin:0 8px; }
-footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
-
-.top-btn{ position:fixed; right:18px; bottom:18px; background:linear-gradient(180deg,#ffcc00,#f0b800); color:#000; border:none; padding:10px 12px;
-  border-radius:12px; cursor:pointer; box-shadow:0 12px 30px rgba(255,204,0,0.18); display:none; z-index:80; }
-
-@media (max-width:900px){
-  .burger{ display:block; }
-  .nav-links{ display:none; position:relative; width:100%; gap:0; background:#0d0d0d; padding:10px 12px; border-top:1px solid rgba(255,204,0,0.03);}
-  .nav-links.open{ display:flex; flex-direction:column; }
-  .card img{ height:180px; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borussia Dortmund Frauen Fanpage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
-<header>
-  <div style="display:flex; align-items:center; gap:12px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Borussia_Dortmund_logo.svg" alt="BVB" style="width:46px;height:46px;border-radius:6px;background:#000;padding:4px">
-    <div>
-      <h1>Borussia Dortmund Feminino</h1>
-      <div class="brand-sub">Fan site • Conteúdo de torcedores</div>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <!-- Header -->
+  <header class="bg-black text-yellow-400 p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Borussia Dortmund Frauen</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#noticias" class="hover:text-white">Notícias</a></li>
+          <li><a href="#jogadoras" class="hover:text-white">Jogadoras</a></li>
+          <li><a href="#jogos" class="hover:text-white">Jogos</a></li>
+          <li><a href="#sobre" class="hover:text-white">Sobre</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<div style="background:#0b0b0b; border-top:1px solid rgba(255,204,0,0.03); position:sticky; top:0; z-index:50;">
-  <div class="nav-inner">
-    <div style="display:flex; align-items:center; gap:12px;">
-      <button id="burger" class="burger" aria-label="menu">☰</button>
-      <strong style="color:#ffd64d">BVB Frauen</strong>
+  <!-- Hero -->
+  <section class="bg-yellow-400 text-black text-center py-12">
+    <h2 class="text-3xl font-extrabold">Fanpage não-oficial do Borussia Dortmund Feminino</h2>
+    <p class="mt-2 text-lg">Acompanhe notícias, elenco e calendário de jogos do time feminino do BVB!</p>
+  </section>
+
+  <!-- Notícias -->
+  <section id="noticias" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-bold mb-6 text-center">📰 Últimas Notícias</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Notícia 1 -->
+      <article class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Vitória contra o Leverkusen" class="w-full h-56 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">Vitória por 6x0 contra o Leverkusen</h4>
+          <p class="text-gray-700">A equipe feminina do Borussia Dortmund iniciou sua primeira temporada na Regionalliga Oeste com uma vitória em casa. A equipe recém-promovida derrotou o sub-23 do Bayer 04 Leverkusen por 6 a 0 diante de sua torcida no estádio Rote Erde. Os gols foram marcados por Jasmin Jabbes (3), Dana Marquardt (2) e Ronja Leubner.</p>
+        </div>
+      </article>
+
+      <!-- Notícia 2 -->
+      <article class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-1:News-TeamStage-Desktop?ts=1757066190823&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="Vitória contra o SV Thülen" class="w-full h-56 object-cover">
+        <div class="p-4">
+          <h4 class="text-xl font-bold mb-2">Estreia na Westfalenpokal com vitória</h4>
+          <p class="text-gray-700">Na noite de quinta-feira, as mulheres do BVB iniciaram a nova temporada da Westfalenpokal como atuais campeãs, em seu jogo contra o SV Thülen. O jogo terminou sem gols no intervalo, após o qual dois gols de Dana Marquardt e um de Ann-Sophie Vogel e Hedda Wahle, respectivamente, no segundo tempo, deram ao BVB uma vitória por 4 a 0. A próxima rodada da Westfalenpokal será o clássico contra o FC Schalke 04.</p>
+        </div>
+      </article>
+
     </div>
-    <div class="nav-links" id="navLinks">
-      <a href="#noticias">Notícias</a>
-      <a href="#elenco">Elenco</a>
-      <a href="#jogadoras">Jogadoras</a>
-      <a href="#promissoras">Promissoras</a>
-      <a href="#jogos">Próximos Jogos</a>
-      <a href="#titulos">Títulos</a>
-      <a href="#estatisticas">Estatísticas</a>
-      <a href="#historicos">Históricos</a>
-      <a href="#contato">Contato</a>
+  </section>
+
+  <!-- Jogadoras -->
+  <section id="jogadoras" class="bg-gray-200 py-12 px-4">
+    <h3 class="text-2xl font-bold mb-6 text-center">👩‍🦱 Jogadoras em Destaque</h3>
+    <div class="grid md:grid-cols-3 gap-6 container mx-auto">
+      
+      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
+        <h4 class="font-bold text-lg">Vanessa Kuhl</h4>
+        <p class="text-gray-600">Atacante</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
+        <h4 class="font-bold text-lg">Marie Grothe</h4>
+        <p class="text-gray-600">Meio-campo</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-4 text-center">
+        <img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt" class="w-32 h-32 object-cover mx-auto rounded-full mb-4">
+        <h4 class="font-bold text-lg">Mandy Reinhardt</h4>
+        <p class="text-gray-600">Atacante</p>
+      </div>
+
     </div>
-  </div>
-</div>
+  </section>
 
-<section class="hero">
-  <div class="hero-inner">
-    <h2>HEJA BVB</h2>
-    <a class="cta" href="#jogos">Ver Próximo Jogo</a>
-  </div>
-</section>
-
-<!-- NOTÍCIAS -->
-<section id="noticias" class="container">
-  <h2 class="section-title">📰 Últimas Notícias</h2>
-  <article class="article" style="margin-top:16px;">
-    <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="BVB Frauen vs Leverkusen">
-    <div class="body">
-      <h3 style="color:#ffd64d; margin-bottom:8px;">Vitória histórica: BVB Frauen 6x0 Leverkusen</h3>
-      <p>A equipe feminina do Borussia Dortmund iniciou sua primeira temporada na Regionalliga Oeste com uma vitória em casa. A equipe recém-promovida derrotou o sub-23 do Bayer 04 Leverkusen por 6 a 0 diante de sua torcida no estádio Rote Erde. <strong>Gols: Jasmin Jabbes (3), Dana Marquardt (2) e Ronja Leubner</strong>.</p>
+  <!-- Próximos Jogos -->
+  <section id="jogos" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-bold mb-6 text-center">📅 Próximos Jogos</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse bg-white shadow-md rounded-2xl overflow-hidden text-center">
+        <thead class="bg-yellow-400 text-black">
+          <tr>
+            <th class="p-3">Data</th>
+            <th class="p-3">Mandante</th>
+            <th class="p-3">Placar</th>
+            <th class="p-3">Visitante</th>
+            <th class="p-3">Competição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="p-3">12/09/2025</td>
+            <td>Borussia Dortmund</td>
+            <td>-</td>
+            <td>FC Schalke 04</td>
+            <td>Westfalenpokal</td>
+          </tr>
+          <tr class="border-b bg-gray-50">
+            <td class="p-3">20/09/2025</td>
+            <td>Sportfreunde Siegen</td>
+            <td>-</td>
+            <td>Borussia Dortmund</td>
+            <td>Regionalliga Oeste</td>
+          </tr>
+          <tr>
+            <td class="p-3">27/09/2025</td>
+            <td>Borussia Dortmund</td>
+            <td>-</td>
+            <td>SV Menden</td>
+            <td>Regionalliga Oeste</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </article>
-</section>
+  </section>
 
-<!-- ELENCO -->
-<section id="elenco" class="container">
-  <h2 class="section-title">👥 Elenco Completo 25/26</h2>
-  <div class="grid">
-    <!-- Lista completa como você enviou antes -->
-  </div>
+  <!-- Sobre -->
+  <section id="sobre" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-bold mb-4 text-center">ℹ️ Sobre este site</h3>
+    <p class="text-gray-700 text-center max-w-2xl mx-auto">Este é um projeto <strong>fan made</strong> criado para celebrar o Borussia Dortmund Feminino. Aqui você encontra notícias, informações, calendário de jogos e destaques das jogadoras do time. Não é o site oficial do clube.</p>
+  </section>
 
-  <div style="overflow:auto; border-radius:12px; margin-top:16px;">
-    <table class="table">
-      <thead>
-        <tr><th>#</th><th>Sobrenome</th><th>Primeiro Nome</th><th>Posição</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>van der Laan</td><td>Laura</td><td>Goleira</td></tr>
-        <tr><td>2</td><td>Böger</td><td>Mia</td><td>Defesa</td></tr>
-        <tr><td>3</td><td>Steenwijk</td><td>Jenske</td><td>Defesa</td></tr>
-        <tr><td>5</td><td>Jabbes</td><td>Jasmin</td><td>Ataque</td></tr>
-        <tr><td>6</td><td>Wahle</td><td>Hedda</td><td>Defesa</td></tr>
-        <tr><td>7</td><td>Tayeh</td><td>Mara</td><td>Defesa</td></tr>
-        <tr><td>8</td><td>Günnewig</td><td>Noreen</td><td>Meio-campo</td></tr>
-        <tr><td>9</td><td>Marquardt</td><td>Dana</td><td>Ataque</td></tr>
-        <tr><td>10</td><td>Schumacher</td><td>Rita</td><td>Ataque</td></tr>
-        <tr><td>11</td><td>Willeke</td><td>Nora</td><td>Meio-campo</td></tr>
-        <tr><td>13</td><td>Reimann</td><td>Paula</td><td>Defesa</td></tr>
-        <tr><td>14</td><td>Ito</td><td>Sara</td><td>Meio-campo</td></tr>
-        <tr><td>16</td><td>Wisniewski</td><td>Lucy</td><td>Ataque</td></tr>
-        <tr><td>17</td><td>Leubner</td><td>Ronja</td><td>Meio-campo</td></tr>
-        <tr><td>18</td><td>Baum</td><td>Celina</td><td>Defesa</td></tr>
-        <tr><td>19</td><td>Enderle</td><td>Annika</td><td>Ataque</td></tr>
-        <tr><td>20</td><td>Vogel</td><td>Ann-Sophie</td><td>Defesa</td></tr>
-        <tr><td>21</td><td>Kempe</td><td>Frederike</td><td>Defesa</td></tr>
-        <tr><td>22</td><td>Schuster</td><td>Melanie</td><td>Defesa</td></tr>
-        <tr><td>23</td><td>Blum</td><td>Carolina</td><td>Goleira</td></tr>
-        <tr><td>26</td><td>Wöhrn</td><td>Yasu</td><td>Defesa</td></tr>
-        <tr><td>27</td><td>Wicke</td><td>Nova</td><td>Meio-campo</td></tr>
-        <tr><td>29</td><td>Paulo</td><td>Emília</td><td>Ataque</td></tr>
-        <tr><td>31</td><td>Lichatschow</td><td>Deniese</td><td>Goleira</td></tr>
-        <tr><td>32</td><td>Scholle</td><td>Minha</td><td>Ataque</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- JOGADORAS HISTÓRICAS -->
-<section id="jogadoras" class="container">
-  <h2 class="section-title">⭐ Jogadoras Históricas</h2>
-  <div class="grid">
-    <div class="card"><img src="https://www.darowski.com/bvb/assets/images/frauen/365/kuhl.jpg" alt="Vanessa Kuhl"><h3>Vanessa Kuhl</h3></div>
-    <div class="card"><img src="https://www.darowski.com/bvb/assets/images/frauen/365/grothe.jpg" alt="Marie Grothe"><h3>Marie Grothe</h3></div>
-    <div class="card"><img src="https://www.darowski.com/bvb/assets/images/frauen/365/reinhardt.jpg" alt="Mandy Reinhardt"><h3>Mandy Reinhardt</h3></div>
-    <div class="card"><img src="https://www.darowski.com/bvb/assets/images/frauen/365/schorer.jpg" alt="Sandra Schorer"><h3>Sandra Schorer</h3></div>
-  </div>
-</section>
-
-<!-- PROMISSORAS -->
-<section id="promissoras" class="container">
-  <h2 class="section-title">🌟 Jogadoras Promissoras</h2>
-  <div class="grid">
-    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fGZQ9ic9Pqcm8PzJHp7iVb4ErbJQLWmkIA&s" class="promissora" alt="Rita Schumacher"><h3>Rita Schumacher</h3></div>
-    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" class="promissora" alt="Ronja Leubner"><h3>Ronja Leubner</h3></div>
-    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6lYFj1Xj9vefQMRK_vsYIIGyYnB-B3yug&s" class="promissora" alt="Dana Marquardt"><h3>Dana Marquardt</h3></div>
-  </div>
-</section>
-
-<!-- PRÓXIMOS JOGOS -->
-<section id="jogos" class="container">
-  <h2 class="section-title">📆 Próximos Jogos</h2>
-  <table class="table">
-    <tr><th>Data</th><th>Adversário</th></tr>
-    <tr><td>31/08</td><td>1. FC Köln II</td></tr>
-    <tr><td>07/09</td><td>Borussia Mönchengladbach II</td></tr>
-  </table>
-</section>
-
-<!-- STAFF -->
-<section id="staff" class="container">
-  <h2 class="section-title">🧑‍💼 Staff Técnico</h2>
-  <ul style="text-align:left; max-width:700px; margin:0 auto; color:#eaeaea;">
-    <li>Markus Högner — Treinador Principal</li>
-    <li>Tim Treude — Treinador Assistente</li>
-    <li>Dustin Wöhrn — Preparador Físico</li>
-    <li>Sabine Färber — Treinadora de Goleiras</li>
-  </ul>
-</section>
-
-<!-- TÍTULOS -->
-<section id="titulos" class="container">
-  <h2 class="section-title">🏆 Títulos</h2>
-  <ul style="color:#eaeaea; max-width:700px; margin:0 auto 16px;">
-    <li>Regionalliga Oeste: 2021/22</li>
-    <li>Westfalenpokal: 2022, 2023</li>
-  </ul>
-</section>
-
-<!-- ESTATÍSTICAS -->
-<section id="estatisticas" class="container">
-  <h2 class="section-title">📊 Estatísticas das Jogadoras (2021 → 2025)</h2>
-  <div style="overflow:auto; border-radius:12px; margin-top:16px;">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Jogadora</th>
-          <th>Gols</th>
-          <th>Assistências</th>
-          <th>Total G+A</th>
-          <th>Jogos</th>
-          <th>Média por Jogo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Vanessa Kuhl</td><td>70</td><td>46</td><td>116</td><td>60</td><td>1,93</td></tr>
-        <tr><td>2</td><td>Marie Grothe</td><td>54</td><td>25</td><td>79</td><td>49</td><td>1,61</td></tr>
-        <tr><td>3</td><td>Mandy Reinhardt</td><td>51</td><td>20</td><td>71</td><td>48</td><td>1,48</td></tr>
-        <tr><td>4</td><td>Ana Haslsteiner</td><td>54</td><td>16</td><td>70</td><td>64</td><td>1,09</td></tr>
-        <tr><td>5</td><td>Dana Marquardt</td><td>46</td><td>4</td><td>50</td><td>30</td><td>1,66</td></tr>
-        <tr><td>6</td><td>Ann-Katrin Lau</td><td>26</td><td>20</td><td>46</td><td>47</td><td>0,98</td></tr>
-        <tr><td>7</td><td>Hannah Goosmann</td><td>25</td><td>5</td><td>30</td><td>28</td><td>1,07</td></tr>
-        <tr><td>8</td><td>Lea Rogge-Herper</td><td>16</td><td>11</td><td>27</td><td>45</td><td>0,60</td></tr>
-        <tr><td>9</td><td>Virginia Glänzer</td><td>10</td><td>15</td><td>25</td><td>37</td><td>0,68</td></tr>
-        <tr><td>10</td><td>Laura Höhl</td><td>12</td><td>12</td><td>24</td><td>24</td><td>1,00</td></tr>
-        <tr><td>11</td><td>Annika Billig</td><td>15</td><td>8</td><td>23</td><td>37</td><td>0,62</td></tr>
-        <tr><td>12</td><td>Carolin Kaul</td><td>17</td><td>6</td><td>23</td><td>38</td><td>0,61</td></tr>
-        <tr><td>13</td><td>Sarah Giebels</td><td>18</td><td>4</td><td>22</td><td>38</td><td>0,58</td></tr>
-        <tr><td>14</td><td>Mia Bedarf</td><td>14</td><td>7</td><td>21</td><td>21</td><td>1,00</td></tr>
-        <tr><td>15</td><td>Marjana Naceva</td><td>15</td><td>3</td><td>18</td><td>40</td><td>0,45</td></tr>
-        <tr><td>16</td><td>Marina Jung</td><td>6</td><td>10</td><td>16</td><td>41</td><td>0,39</td></tr>
-        <tr><td>17</td><td>Annika Fälker</td><td>4</td><td>8</td><td>12</td><td>16</td><td>0,75</td></tr>
-        <tr><td>18</td><td>Lisa Klemann</td><td>4</td><td>8</td><td>12</td><td>32</td><td>0,38</td></tr>
-        <tr><td>19</td><td>Luisa Bergmann</td><td>2</td><td>11</td><td>13</td><td>37</td><td>0,35</td></tr>
-        <tr><td>20</td><td>Kimberly Becker</td><td>2</td><td>8</td><td>10</td><td>47</td><td>0,21</td></tr>
-        <tr><td>21</td><td>Finnja Schriek</td><td>10</td><td>1</td><td>11</td><td>11</td><td>1,00</td></tr>
-        <tr><td>22</td><td>Hanna Hentrich</td><td>1</td><td>6</td><td>7</td><td>28</td><td>0,25</td></tr>
-        <tr><td>23</td><td>Danelle Tan</td><td>3</td><td>3</td><td>6</td><td>4</td><td>1,50</td></tr>
-        <tr><td>24</td><td>Hannah Geldschläger</td><td>2</td><td>2</td><td>4</td><td>3</td><td>1,33</td></tr>
-        <tr><td>25</td><td>Merle Greulich</td><td>2</td><td>1</td><td>3</td><td>4</td><td>0,75</td></tr>
-        <tr><td>26</td><td>Allegra Gerres</td><td>1</td><td>2</td><td>3</td><td>29</td><td>0,10</td></tr>
-        <tr><td>27</td><td>Denise Pörteners</td><td>1</td><td>2</td><td>3</td><td>19</td><td>0,16</td></tr>
-        <tr><td>28</td><td>Marah Tayeh</td><td>1</td><td>1</td><td>2</td><td>3</td><td>1,00</td></tr>
-        <tr><td>29</td><td>Lisa Gomulka</td><td>1</td><td>0</td><td>1</td><td>4</td><td>0,25</td></tr>
-        <tr><td>30</td><td>Nora Rechenbach</td><td>0</td><td>1</td><td>1</td><td>21</td><td>0,05</td></tr>
-        <tr><td>31</td><td>Sandra Schröer (GK)</td><td>0</td><td>1</td><td>1</td><td>40</td><td>0,03</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- HISTÓRICOS / CONTATO -->
-<section id="historicos" class="container">
-  <h2 class="section-title">📜 Contato & Redes</h2>
-  <p style="text-align:center; margin-top:12px;">Siga-nos no Instagram: <a href="https://www.instagram.com/bvbfembr" target="_blank">@bvbfembr</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Borussia Dortmund Feminino • Criado por Torcedores • <a href="#top">Topo</a>
-</footer>
-
-<script>
-const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
-burger.addEventListener("click",()=>{ navLinks.classList.toggle("open"); });
-</script>
-
+  <!-- Footer -->
+  <footer class="bg-black text-yellow-400 text-center py-4 mt-12">
+    <p>&copy; 2025 Fanpage Borussia Dortmund Frauen. Criado por fãs, para fãs.</p>
+  </footer>
 </body>
 </html>
