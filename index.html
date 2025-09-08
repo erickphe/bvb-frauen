@@ -12,8 +12,6 @@ body{
   background:#070707; color:#f4f4f4; -webkit-font-smoothing:antialiased;
   line-height:1.5;
 }
-
-/* HEADER */
 header{
   background: linear-gradient(90deg,#000 0%, #121212 40%, #ffcc00 100%);
   padding:20px 16px;
@@ -21,8 +19,6 @@ header{
 }
 header h1{ color:#ffcc00; font-size:1.4rem; letter-spacing:0.6px; margin-left:8px; }
 header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.95; }
-
-/* NAV */
 .nav-inner{ max-width:1200px; margin:0 auto; display:flex; gap:12px; align-items:center; padding:8px 16px; justify-content:space-between; }
 .nav-links{ display:flex; gap:10px; flex-wrap:wrap; }
 .nav-links a{
@@ -30,10 +26,7 @@ header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.9
   transition:all .16s ease;
 }
 .nav-links a:hover{ color:#fff; background: linear-gradient(90deg, rgba(255,204,0,0.06), rgba(255,204,0,0.02)); transform:translateY(-2px); }
-
 .burger{ display:none; background:transparent; border:0; color:#ffd64d; font-size:1.25rem; cursor:pointer; }
-
-/* HERO */
 .hero{
   height:56vh; min-height:240px; display:flex; align-items:center; justify-content:center; text-align:center;
   background-image: url("https://wallpapercave.com/wp/wp9517031.jpg");
@@ -45,11 +38,8 @@ header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.9
 .hero h2{ color:#ffcc00; font-size:2.6rem; margin-bottom:12px; text-shadow:0 6px 18px rgba(0,0,0,0.7); letter-spacing:1px; }
 .hero .cta{ display:inline-block; background:#ffcc00; color:#000; padding:12px 26px; border-radius:999px; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(255,204,0,0.16); transition:all .18s ease; }
 .hero .cta:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(255,204,0,0.28); }
-
 .container{ max-width:1200px; margin:0 auto; padding:36px 18px; }
 h2.section-title{ color:#ffcc00; margin-bottom:18px; font-size:1.4rem; display:inline-block; text-shadow:0 0 6px rgba(255,204,0,0.06); }
-
-/* CARD GRID */
 .grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
 .card{
   background:#0f0f0f; border-radius:12px; padding:12px; text-align:center; overflow:hidden;
@@ -63,22 +53,17 @@ h2.section-title{ color:#ffcc00; margin-bottom:18px; font-size:1.4rem; display:i
 .card img.promissora{ object-fit:contain; background:#000; height:220px; }
 .card h3{ margin:10px 0 6px; color:#ffd64d; font-size:1.02rem; }
 .card p{ color: #e7e7e7; font-size:0.92rem; margin-bottom:6px; }
-
 .article{ background:#0b0b0b; border-radius:12px; overflow:hidden; box-shadow:0 6px 28px rgba(0,0,0,0.6); margin-bottom:24px;}
 .article img{ width:100%; height:320px; object-fit:cover; display:block; }
 .article .body{ padding:16px; color:#eaeaea; }
-
 .table{ width:100%; border-collapse:collapse; margin-top:12px; }
 .table th,.table td{ padding:10px; border:1px solid rgba(255,255,255,0.04); text-align:left; font-size:0.95rem; }
 .table th{ background:#ffcc00; color:#000; }
-
 footer{ background:#000; color:#ffd64d; padding:26px 18px; margin-top:36px; text-align:center; box-shadow:0 -6px 18px rgba(255,204,0,0.05); }
 footer a{ color:#ffd64d; text-decoration:none; font-weight:700; margin:0 8px; }
 footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
-
 .top-btn{ position:fixed; right:18px; bottom:18px; background:linear-gradient(180deg,#ffcc00,#f0b800); color:#000; border:none; padding:10px 12px;
   border-radius:12px; cursor:pointer; box-shadow:0 12px 30px rgba(255,204,0,0.18); display:none; z-index:80; }
-
 @media (max-width:900px){
   .burger{ display:block; }
   .nav-links{ display:none; position:relative; width:100%; gap:0; background:#0d0d0d; padding:10px 12px; border-top:1px solid rgba(255,204,0,0.03);}
@@ -108,7 +93,7 @@ footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
     <div class="nav-links" id="navLinks">
       <a href="#noticias">Notícias</a>
       <a href="#elenco">Elenco</a>
-      <a href="#jogadoras">Jogadoras</a>
+      <a href="#jogadoras">Históricas</a>
       <a href="#promissoras">Promissoras</a>
       <a href="#jogos">Próximos Jogos</a>
       <a href="#titulos">Títulos</a>
@@ -129,23 +114,11 @@ footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
 <!-- NOTÍCIAS -->
 <section id="noticias" class="container">
   <h2 class="section-title">📰 Últimas Notícias</h2>
-
-  <!-- Vitória 7x0 Gladbach -->
   <article class="article">
-    <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" 
-         alt="BVB Frauen vitória sobre o Gladbach">
+    <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/BVB-Frauen-Leverkusen-1:News-TeamStage-Desktop?ts=1756050361411&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="BVB Frauen vitória sobre o Gladbach">
     <div class="body">
-      <h3 style="color:#ffd64d; margin-bottom:8px;">BVB feminino comemora vitória por 7 a 0 sobre o Gladbach</h3>
-      <p>As mulheres do Borussia Dortmund deram a resposta certa à amarga derrota da semana passada em Colônia na Regionalliga Oeste: diante de <strong>1.535 espectadores</strong> na Rote Erde, a equipe de Markus Högner venceu por <strong>7 a 0 (4 a 0)</strong> o Borussia Mönchengladbach II na terceira rodada.</p>
-    </div>
-  </article>
-
-  <!-- Westfalenpokal -->
-  <article class="article">
-    <img src="https://s7g10.scene7.com/is/image/BORUSSIADORTMUNDGMBHANDCOKGAA/Jubel-Frauen-1:News-TeamStage-Desktop?ts=1757066190823&dpr=on,1&fmt=webp,,lossy&qlt=85" alt="BVB Frauen Westfalenpokal">
-    <div class="body">
-      <h3 style="color:#ffd64d; margin-bottom:8px;">Vitória no Westfalenpokal</h3>
-      <p>Na noite de quinta-feira, as mulheres do BVB iniciaram a nova temporada da Westfalenpokal como atuais campeãs, em seu jogo contra o SV Thülen. O jogo terminou sem gols no intervalo, após o qual dois gols de Dana Marquardt e um de Ann-Sophie Vogel e Hedda Wahle, respectivamente, no segundo tempo, deram ao BVB uma vitória por 4 a 0. A próxima rodada será o clássico contra o FC Schalke 04.</p>
+      <h3 style="color:#ffd64d; margin-bottom:8px;">Vitória por 7 a 0 sobre o Gladbach</h3>
+      <p>Diante de <strong>1.535 espectadores</strong>, a equipe venceu por <strong>7 a 0</strong> o Borussia Mönchengladbach II na terceira rodada.</p>
     </div>
   </article>
 </section>
@@ -154,7 +127,11 @@ footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
 <section id="elenco" class="container">
   <h2 class="section-title">👥 Elenco Completo 25/26</h2>
   <div class="grid">
-    <!-- Lista de jogadores inserida anteriormente -->
+    <div class="card"><img src="https://pbs.twimg.com/media/GzXap8eXUAAnWpW.jpg" alt="Dana Marquardt"><h3>Dana Marquardt</h3><p>Ataque • 23 gols em 11 jogos</p></div>
+    <div class="card"><img src="https://pbs.twimg.com/media/GzXap8eXUAAnWpW.jpg" alt="Maria Grothe"><h3>Maria Grothe</h3><p>Meio-campo • 19 gols, 10 assistências em 23 jogos</p></div>
+    <div class="card"><img src="https://pbs.twimg.com/media/GzXap8eXUAAnWpW.jpg" alt="Finnja Schriek"><h3>Finnja Schriek</h3><p>Meio-campo • 10 gols, 1 assistência em 11 jogos</p></div>
+    <div class="card"><img src="https://pbs.twimg.com/media/GzXap8eXUAAnWpW.jpg" alt="Sarah Giebels"><h3>Sarah Giebels</h3><p>Ataque • 9 gols em 19 jogos</p></div>
+    <div class="card"><img src="https://pbs.twimg.com/media/GzXap8eXUAAnWpW.jpg" alt="Marjana Naceva"><h3>Marjana Naceva</h3><p>Ataque • 8 gols em 21 jogos</p></div>
   </div>
 </section>
 
@@ -175,8 +152,33 @@ footer a:hover{ color:#fff; text-shadow:0 0 12px #ffd64d; }
   <div class="grid">
     <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fGZQ9ic9Pqcm8PzJHp7iVb4ErbJQLWmkIA&s" class="promissora" alt="Rita Schumacher"><h3>Rita Schumacher</h3></div>
     <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOwi61cMi5aEn4Ei5EB6DbpWZ9fBjkzvtuGg&s" class="promissora" alt="Ronja Leubner"><h3>Ronja Leubner</h3></div>
-    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6lYFj1Xj9vefQMRK_vsYIIGyYnB-B3yug&s" class="promissora" alt="Dana Marquardt"><h3>Dana Marquardt</h3></div>
+    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6lYFj1Xj9vefQMRK_vsYIIGyBnS8uPIKQ&s" class="promissora" alt="Dana Marquardt"><h3>Dana Marquardt</h3></div>
   </div>
+</section>
+
+<!-- TÍTULOS -->
+<section id="titulos" class="container">
+  <h2 class="section-title">🏆 Títulos Recentes</h2>
+  <ul style="color:#e7e7e7; margin-left:18px; margin-top:12px; line-height:1.6;">
+    <li>Kreisliga 21/22</li>
+    <li>Bezirksliga 22/23</li>
+    <li>Landesliga Staffel 2 23/24</li>
+    <li>Verbandsliga Westfalen 24/25</li>
+    <li>4x Kreispokal</li>
+  </ul>
+</section>
+
+<!-- ESTATÍSTICAS -->
+<section id="estatisticas" class="container">
+  <h2 class="section-title">📊 Estatísticas da Temporada 24/25</h2>
+  <table class="table">
+    <tr><th>Jogadora</th><th>Posição</th><th>Jogos</th><th>Gols</th><th>Assistências</th></tr>
+    <tr><td>Dana Marquardt</td><td>Ataque</td><td>11</td><td>23</td><td>2</td></tr>
+    <tr><td>Maria Grothe</td><td>Meio-campo</td><td>23</td><td>19</td><td>10</td></tr>
+    <tr><td>Finnja Schriek</td><td>Meio-campo</td><td>11</td><td>10</td><td>1</td></tr>
+    <tr><td>Sarah Giebels</td><td>Ataque</td><td>19</td><td>9</td><td>2</td></tr>
+    <tr><td>Marjana Naceva</td><td>Ataque</td><td>21</td><td>8</td><td>2</td></tr>
+  </table>
 </section>
 
 <script>
@@ -191,4 +193,3 @@ burger.addEventListener("click",()=>{ navLinks.classList.toggle("open"); });
 
 </body>
 </html>
-
