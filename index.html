@@ -34,20 +34,65 @@ header .brand-sub{ color:#e6d17a; font-size:0.9rem; margin-left:8px; opacity:0.9
 .burger{ display:none; background:transparent; border:0; color:#ffd64d; font-size:1.25rem; cursor:pointer; }
 
 /* HERO */
-.hero{
-  height:56vh; min-height:240px; display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image: url("https://wallpapercave.com/wp/wp9517031.jpg");
-  background-size:cover; background-position:center;
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h2>HEJA BVB</h2>
+    <a class="cta" href="#jogos">Ver Próximo Jogo</a>
+  </div>
+</section>
+
+<style>
+.hero {
+  height:56vh; 
+  min-height:240px; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  text-align:center;
+
+  /* 🎮 Fundo estilo PlayStation */
+  background-image: url("https://wallpapercave.com/wp/wp1917111.jpg");
+
+  background-size:cover; 
+  background-position:center;
   position:relative;
 }
-.hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65)); }
-.hero-inner{ position:relative; z-index:2; padding:20px; }
-.hero h2{ color:#ffcc00; font-size:2.6rem; margin-bottom:12px; text-shadow:0 6px 18px rgba(0,0,0,0.7); letter-spacing:1px; }
-.hero .cta{ display:inline-block; background:#ffcc00; color:#000; padding:12px 26px; border-radius:999px; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(255,204,0,0.16); transition:all .18s ease; }
-.hero .cta:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(255,204,0,0.28); }
+.hero::after {
+  content:""; 
+  position:absolute; 
+  inset:0; 
+  background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
+}
+.hero-inner {
+  position:relative; 
+  z-index:2; 
+  padding:20px;
+}
+.hero h2 {
+  color:#ffcc00; 
+  font-size:2.6rem; 
+  margin-bottom:12px; 
+  text-shadow:0 6px 18px rgba(0,0,0,0.7); 
+  letter-spacing:1px;
+}
+.hero .cta {
+  display:inline-block; 
+  background:#ffcc00; 
+  color:#000; 
+  padding:12px 26px; 
+  border-radius:999px; 
+  font-weight:800; 
+  text-decoration:none; 
+  box-shadow:0 10px 30px rgba(255,204,0,0.16); 
+  transition:all .18s ease;
+}
+.hero .cta:hover {
+  transform:translateY(-4px); 
+  box-shadow:0 18px 40px rgba(255,204,0,0.28);
+}
+</style>
 
-.container{ max-width:1200px; margin:0 auto; padding:36px 18px; }
-h2.section-title{ color:#ffcc00; margin-bottom:18px; font-size:1.4rem; display:inline-block; text-shadow:0 0 6px rgba(255,204,0,0.06); }
 
 /* CARD GRID */
 .grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
